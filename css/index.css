@@ -1,0 +1,231 @@
+:root {
+     --bg-color: #f8f4e9;
+     --text-color: #3a3226;
+     --container-bg: #fffdf6;
+     --container-border: #e0d6c2;
+     --heading-color: #5a4a3a;
+     --card-bg: #fffdf6;
+     --card-border: #e0d6c2;
+     --quick-controls-border: rgba(0, 0, 0, 0.1);
+     --card-title-color: #3a3226;
+     --primary-accent: #8b7355;
+     --secondary-accent: #c9b7a7;
+}
+
+.dark-mode {
+     --bg-color: #1a1a1a;
+     --text-color: #e0e0e0;
+     --container-bg: #2a2a2a;
+     --container-border: #444;
+     --heading-color: #c9b7a7;
+     --card-bg: #2a2a2a;
+     --card-border: #444;
+     --quick-controls-border: rgba(255, 255, 255, 0.1);
+     --card-title-color: #e0e0e0;
+     --primary-accent: #c9b7a7;
+     --secondary-accent: #8b7355;
+}
+
+body {
+     background-color: var(--bg-color);
+     color: var(--text-color);
+     font-family: "Fauna One", serif;
+     transition: background-color 0.3s, color 0.3s;
+     line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+     font-family: "Cinzel Decorative", cursive;
+     color: var(--heading-color);
+     font-weight: 700;
+     letter-spacing: 0.5px;
+}
+
+.container {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 2rem;
+}
+
+.page-header {
+     margin-bottom: 3rem;
+     position: relative;
+}
+
+.page-header h1 {
+     position: relative;
+     display: inline-block;
+     padding-bottom: 0.5rem;
+}
+
+.page-header h1::after {
+     content: "";
+     position: absolute;
+     bottom: 0;
+     left: 25%;
+     width: 50%;
+     height: 2px;
+     background: var(--primary-accent);
+     transition: all 0.3s ease;
+}
+
+.page-header:hover h1::after {
+     width: 100%;
+     left: 0;
+}
+
+.story-card {
+     background-color: var(--card-bg);
+     border: 1px solid var(--card-border);
+     border-radius: 8px;
+     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+     cursor: pointer;
+     height: 100%;
+     overflow: hidden;
+}
+
+.story-card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+     border-color: var(--primary-accent);
+}
+
+.story-poster {
+     height: 220px;
+     object-fit: cover;
+     width: 100%;
+     transition: transform 0.3s ease;
+}
+
+.language-badge {
+     position: absolute;
+     top: 10px;
+     right: 10px;
+     background-color: var(--primary-accent) !important;
+     font-size: 0.8rem;
+     padding: 0.35rem 0.6rem;
+     border-radius: 20px;
+}
+
+.card-body {
+     padding: 1.5rem;
+}
+
+.card-title {
+     color: var(--card-title-color);
+     font-size: 1.1rem;
+     margin-bottom: 0.5rem;
+     transition: color 0.3s;
+}
+
+.story-card:hover .card-title {
+     color: var(--primary-accent);
+}
+
+.quick-controls {
+     position: fixed;
+     top: 20px;
+     right: 20px;
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     padding: 12px;
+     border-radius: 30px;
+     border: 1px solid var(--quick-controls-border);
+     z-index: 999;
+}
+
+.dark-mode .quick-controls {
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.quick-controls button {
+     background: rgba(var(--primary-accent-rgb), 0.1);
+     border: none;
+     color: var(--primary-accent);
+     font-size: 1.2rem;
+     cursor: pointer;
+     width: 42px;
+     height: 42px;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: all 0.2s ease;
+}
+
+.quick-controls button:hover {
+     background: rgba(var(--primary-accent-rgb), 0.2);
+     transform: translateY(-2px) scale(1.05);
+     color: var(--primary-accent);
+}
+
+/* Animation classes */
+.animate-fade-in {
+     animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+     from {
+          opacity: 0;
+          transform: translateY(10px);
+     }
+
+     to {
+          opacity: 1;
+          transform: translateY(0);
+     }
+}
+
+/* Loading animation */
+@keyframes pulse {
+     0% {
+          opacity: 0.6;
+     }
+
+     50% {
+          opacity: 1;
+     }
+
+     100% {
+          opacity: 0.6;
+     }
+}
+
+.loading-placeholder {
+     animation: pulse 1.5s infinite ease-in-out;
+     background-color: var(--card-border);
+     border-radius: 4px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+     .container {
+          padding: 1.5rem;
+     }
+
+     .page-header {
+          margin-bottom: 2rem;
+     }
+
+     .story-poster {
+          height: 180px;
+     }
+
+     .quick-controls {
+          top: 10px;
+          right: 10px;
+          padding: 10px;
+     }
+
+     .quick-controls button {
+          width: 38px;
+          height: 38px;
+          font-size: 1rem;
+     }
+}

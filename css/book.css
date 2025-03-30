@@ -1,0 +1,237 @@
+:root {
+     --bg-color: #f8f4e9;
+     --text-color: #3a3226;
+     --container-bg: #fffdf6;
+     --container-border: #e0d6c2;
+     --heading-color: #5a4a3a;
+     --card-bg: #fffdf6;
+     --card-border: #e0d6c2;
+     --quick-controls-border: rgba(0, 0, 0, 0.1);
+     --card-title-color: #3a3226;
+     --primary-accent: #8b7355;
+     --secondary-accent: #c9b7a7;
+     --font-size: 18px;
+     --line-height: 1.6;
+}
+
+.dark-mode {
+     --bg-color: #1a1a1a;
+     --text-color: #e0e0e0;
+     --container-bg: #2a2a2a;
+     --container-border: #444;
+     --heading-color: #c9b7a7;
+     --card-bg: #2a2a2a;
+     --card-border: #444;
+     --quick-controls-border: rgba(255, 255, 255, 0.1);
+     --card-title-color: #e0e0e0;
+}
+
+body {
+     font-family: 'Fauna One', serif;
+     background-color: var(--bg-color);
+     color: var(--text-color);
+     font-size: var(--font-size);
+     line-height: var(--line-height);
+     margin: 0;
+     padding: 0;
+     transition: background-color 0.3s, color 0.3s;
+}
+
+.book-container {
+     max-width: 800px;
+     margin: 0 auto;
+     padding: 2rem;
+     text-align: justify;
+}
+
+.book-container {
+     background-color: var(--container-bg);
+     border: 1px solid var(--container-border);
+     border-radius: 8px;
+     padding: 2rem;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+     position: relative;
+}
+
+#bookTitle {
+     font-family: 'Cinzel Decorative', serif;
+     color: var(--heading-color);
+     text-align: center;
+     margin-bottom: 2rem;
+     font-size: 2.5rem;
+     border-bottom: 2px solid var(--primary-accent);
+     padding-bottom: 1rem;
+}
+
+.word {
+     cursor: pointer;
+     transition: all 0.2s;
+     position: relative;
+     padding: 0 2px;
+     border-radius: 2px;
+}
+
+.word:hover {
+     background-color: var(--secondary-accent);
+}
+
+.translated {
+     background-color: var(--secondary-accent);
+     color: var(--text-color);
+}
+
+.translated::after {
+     content: attr(data-translation);
+     position: absolute;
+     bottom: 100%;
+     left: 50%;
+     transform: translateX(-50%);
+     background-color: var(--primary-accent);
+     color: white;
+     padding: 6px 12px;
+     border-radius: 4px;
+     font-size: 0.9rem;
+     white-space: nowrap;
+     z-index: 10;
+     display: none;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.translated:hover::after {
+     display: block;
+     animation: fadeIn 0.2s ease-out;
+}
+
+.saved-word {
+     background-color: var(--secondary-accent);
+     border-bottom: 2px solid var(--primary-accent);
+}
+
+.phrase-translation {
+     position: fixed;
+     background-color: var(--primary-accent);
+     color: white;
+     padding: 12px 16px;
+     border-radius: 6px;
+     max-width: 300px;
+     display: none;
+     z-index: 100;
+     pointer-events: none;
+     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+     font-size: 0.95rem;
+     line-height: 1.4;
+     opacity: 0;
+     transform: translateY(10px);
+     transition: opacity 0.2s, transform 0.2s;
+}
+
+.phrase-translation.show {
+     display: block;
+     opacity: 1;
+     transform: translateY(0);
+}
+
+.highlighted-phrase {
+     background-color: var(--primary-accent);
+     color: white;
+     padding: 0 2px;
+     border-radius: 2px;
+}
+
+.loading-indicator {
+     display: none;
+     position: fixed;
+     background-color: var(--primary-accent);
+     color: white;
+     padding: 8px 16px;
+     border-radius: 4px;
+     z-index: 100;
+     font-size: 0.9rem;
+}
+
+.error-message {
+     color: #ff6b6b;
+}
+
+.progress-container {
+     width: 100%;
+     height: 4px;
+     background-color: var(--container-border);
+     position: fixed;
+     top: 0;
+     left: 0;
+     z-index: 1000;
+}
+
+.progress-bar {
+     height: 100%;
+     width: 0;
+     background-color: var(--primary-accent);
+     transition: width 0.1s;
+}
+
+.quick-controls {
+     position: fixed;
+     bottom: 2rem;
+     right: 2rem;
+     display: flex;
+     flex-direction: column;
+     gap: 0.5rem;
+     z-index: 1000;
+}
+
+.quick-controls button {
+     width: 40px;
+     height: 40px;
+     border-radius: 50%;
+     border: none;
+     background-color: var(--primary-accent);
+     color: white;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 1rem;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+     transition: transform 0.2s, background-color 0.2s;
+}
+
+.quick-controls button:hover {
+     transform: scale(1.1);
+     background-color: var(--secondary-accent);
+}
+
+@keyframes fadeIn {
+     from {
+          opacity: 0;
+          transform: translateX(-50%) translateY(5px);
+     }
+
+     to {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+     }
+}
+
+@media (max-width: 768px) {
+     .book-container {
+          padding: 1rem;
+     }
+
+     .story-container {
+          padding: 1.5rem;
+     }
+
+     #bookTitle {
+          font-size: 2rem;
+     }
+
+     :root {
+          --font-size: 16px;
+     }
+
+     .quick-controls {
+          bottom: 1rem;
+          right: 1rem;
+     }
+}

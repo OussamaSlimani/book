@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reliable Text Translator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Fauna+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/book.css" />
+  </head>
+  <body>
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="quick-controls">
+      <button id="homeButton" title="Go to home">
+        <i class="fas fa-home"></i>
+      </button>
+      <button id="fontIncreaseBtn" title="Increase font size">
+        <i class="fas fa-text-height"></i>
+      </button>
+      <button id="fontDecreaseBtn" title="Decrease font size">
+        <i class="fas fa-text-width"></i>
+      </button>
+      <button id="darkModeToggle" title="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button id="goToSavedBtn" title="Go to saved word">
+        <i class="fas fa-bookmark"></i>
+      </button>
+    </div>
+
+    <!--=====================================================-->
+    <div class="book-container" id="bookContainer">
+      <h1 id="bookTitle">THE SECRET OF RED GATE FARM</h1>
+      <div id="bookContent">
+        <p>
+          <span class="word" id="1_1">Copy code here</span>
+        </p>
+      </div>
+    </div>
+    <!--=====================================================-->
+
+    <div id="phraseTranslation" class="phrase-translation"></div>
+    <div id="loadingIndicator" class="loading-indicator">Translating...</div>
+
+    <script src="js/book-en.js"></script>
+  </body>
+</html>
