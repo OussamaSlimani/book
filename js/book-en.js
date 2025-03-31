@@ -307,3 +307,39 @@ document.addEventListener("DOMContentLoaded", function () {
 document.getElementById("homeButton").addEventListener("click", function () {
   window.location.href = "/";
 });
+
+// timer
+let timer;
+let timeElapsed = 0;
+let running = false;
+const maxTime = 20 * 60;
+
+function updateDisplay() {
+  let minutes = Math.floor(timeElapsed / 60)
+    .toString()
+    .padStart(2, "0");
+  let seconds = (timeElapsed % 60).toString().padStart(2, "0");
+  document.getElementById("timerDisplay").textContent = `${minutes}:${seconds}`;
+}
+
+function toggleTimer() {
+  const timerButton = document.getElementById("timerButton");
+  if (running) {
+    clearInterval(timer);
+    timerButton.innerHTML = '<i class="fas fa-play"></i>';
+  } else {
+    timer = setInterval(() => {
+      if (timeElapsed < maxTime) {
+        timeElapsed++;
+        updateDisplay();
+      } else {
+        clearInterval(timer);
+      }
+    }, 1000);
+    timerButton.innerHTML = '<i class="fas fa-pause"></i>';
+  }
+  running = !running;
+}
+
+document.getElementById("timerButton").addEventListener("click", toggleTimer);
+updateDisplay();
