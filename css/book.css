@@ -10,8 +10,8 @@
      --card-title-color: #3a3226;
      --primary-accent: #8b7355;
      --secondary-accent: #c9b7a7;
-     --font-size: 18px;
-     --line-height: 1.6;
+     --font-size: 30px;
+     --line-height: 1.8;
 }
 
 .dark-mode {
@@ -24,6 +24,7 @@
      --card-border: #444;
      --quick-controls-border: rgba(255, 255, 255, 0.1);
      --card-title-color: #e0e0e0;
+     --secondary-accent: #8b7355;
 }
 
 body {
@@ -38,7 +39,7 @@ body {
 }
 
 .book-container {
-     max-width: 800px;
+     max-width: 1200px;
      margin: 0 auto;
      padding: 2rem;
      text-align: justify;
@@ -103,7 +104,6 @@ body {
 }
 
 .saved-word {
-     background-color: var(--secondary-accent);
      border-bottom: 2px solid var(--primary-accent);
 }
 

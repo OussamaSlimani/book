@@ -5,22 +5,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const phraseTranslation = document.getElementById("phraseTranslation");
   const loadingIndicator = document.getElementById("loadingIndicator");
   const progressBar = document.getElementById("progressBar");
-  const fontIncreaseBtn = document.getElementById("fontIncreaseBtn");
-  const fontDecreaseBtn = document.getElementById("fontDecreaseBtn");
-  const darkModeToggle = document.getElementById("darkModeToggle");
 
   // State variables
   let longPressTimer;
-  let savedWordId = localStorage.getItem("savedWordId");
+  let savedWordIdFr = localStorage.getItem("savedWordIdFr");
   let currentHighlight = null;
   let lastSelectionTime = 0;
 
-  // Initialize settings from localStorage
-  initializeSettings();
-
   // Check if there's a saved word and highlight it
-  if (savedWordId) {
-    const savedWord = document.getElementById(savedWordId);
+  if (savedWordIdFr) {
+    const savedWord = document.getElementById(savedWordIdFr);
     if (savedWord) {
       savedWord.classList.add("saved-word");
       goToSavedBtn.style.display = "flex";
@@ -36,28 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", updateProgressBar);
   updateProgressBar();
 
-  function initializeSettings() {
-    // Dark mode
-    if (localStorage.getItem("darkMode") === "enabled") {
-      document.body.classList.add("dark-mode");
-      darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    }
-
-    // Font size
-    const savedFontSize = localStorage.getItem("fontSize");
-    if (savedFontSize) {
-      document.documentElement.style.setProperty(
-        "--font-size",
-        savedFontSize + "px"
-      );
-    }
-  }
-
   function setupEventListeners() {
     // Go to saved word button click handler
     goToSavedBtn.addEventListener("click", function () {
-      if (savedWordId) {
-        const savedWord = document.getElementById(savedWordId);
+      if (savedWordIdFr) {
+        const savedWord = document.getElementById(savedWordIdFr);
         if (savedWord) {
           savedWord.scrollIntoView({ behavior: "smooth", block: "center" });
           savedWord.style.backgroundColor = "var(--secondary-accent)";
@@ -121,13 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
       translatePhrase(selectedText, x, y);
     });
 
-    // Font size controls
-    fontIncreaseBtn.addEventListener("click", increaseFontSize);
-    fontDecreaseBtn.addEventListener("click", decreaseFontSize);
-
-    // Dark mode toggle
-    darkModeToggle.addEventListener("click", toggleDarkMode);
-
     // Close translation popup when clicking elsewhere
     document.addEventListener("click", function (e) {
       if (
@@ -142,14 +112,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function handleLongPress(word) {
-    if (savedWordId) {
-      const prevSavedWord = document.getElementById(savedWordId);
-      if (prevSavedWord) prevSavedWord.classList.remove("saved-word");
+    let newWordId = word.id;
+
+    if (savedWordIdFr) {
+      let [savedBookId] = savedWordIdFr.split("_");
+      let [newBookId] = newWordId.split("_");
+
+      if (savedBookId === newBookId) {
+        // Update saved word for the same book
+        const prevSavedWord = document.getElementById(savedWordIdFr);
+        if (prevSavedWord) prevSavedWord.classList.remove("saved-word");
+      }
     }
 
-    savedWordId = word.id;
+    // Save new word
+    savedWordIdFr = newWordId;
     word.classList.add("saved-word");
-    localStorage.setItem("savedWordId", savedWordId);
+    localStorage.setItem("savedWordIdFr", savedWordIdFr);
     goToSavedBtn.style.display = "flex";
 
     // Show feedback
@@ -240,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch(
       `https://api.mymemory.translated.net/get?q=${encodeURIComponent(
         text
-      )}&langpair=fr|ar`
+      )}&langpair=en|ar`
     )
       .then((response) => {
         if (!response.ok) throw new Error("Network response was not ok");
@@ -263,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function () {
           },
           body: JSON.stringify({
             q: text,
-            source: "fr",
+            source: "en",
             target: "ar",
           }),
         })
@@ -322,35 +301,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const scrolled = window.scrollY;
     const progress = (scrolled / (fullHeight - windowHeight)) * 100;
     progressBar.style.width = progress + "%";
-  }
-
-  function increaseFontSize() {
-    const currentSize = parseInt(
-      getComputedStyle(document.documentElement).getPropertyValue("--font-size")
-    );
-    const newSize = Math.min(currentSize + 2, 24);
-    document.documentElement.style.setProperty("--font-size", newSize + "px");
-    localStorage.setItem("fontSize", newSize);
-  }
-
-  function decreaseFontSize() {
-    const currentSize = parseInt(
-      getComputedStyle(document.documentElement).getPropertyValue("--font-size")
-    );
-    const newSize = Math.max(currentSize - 2, 14);
-    document.documentElement.style.setProperty("--font-size", newSize + "px");
-    localStorage.setItem("fontSize", newSize);
-  }
-
-  function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
-    if (document.body.classList.contains("dark-mode")) {
-      localStorage.setItem("darkMode", "enabled");
-      darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    } else {
-      localStorage.setItem("darkMode", "disabled");
-      darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    }
   }
 });
 
