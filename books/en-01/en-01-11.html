@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE SECRET OF RED GATE FARM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Fauna+One&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../../css/book.css" />
+</head>
+
+<body class="dark-mode">
+  <button class="mobile-menu-toggle" id="mobileMenuToggle">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <div class="main-container">
+    <!-- Navigation Sidebar -->
+    <nav class="nav-sidebar">
+      <h2>Chapters</h2>
+      <ul class="chapter-list" id="chapterList">
+        <li><a href="en-01-01.html">Chapter 1</a></li>
+        <li><a href="en-01-02.html">Chapter 2</a></li>
+        <li><a href="en-01-03.html">Chapter 3</a></li>
+        <li><a href="en-01-04.html">Chapter 4</a></li>
+        <li><a href="en-01-05.html">Chapter 5</a></li>
+        <li><a href="en-01-06.html">Chapter 6</a></li>
+        <li><a href="en-01-07.html">Chapter 7</a></li>
+        <li><a href="en-01-08.html">Chapter 8</a></li>
+        <li><a href="en-01-09.html">Chapter 9</a></li>
+        <li><a href="en-01-10.html">Chapter 10</a></li>
+        <li><a href="en-01-11.html" class="active">Chapter 11</a></li>
+        <li><a href="en-01-12.html">Chapter 12</a></li>
+        <li><a href="en-01-13.html">Chapter 13</a></li>
+        <li><a href="en-01-14.html">Chapter 14</a></li>
+        <li><a href="en-01-15.html">Chapter 15</a></li>
+        <li><a href="en-01-16.html">Chapter 16</a></li>
+        <li><a href="en-01-17.html">Chapter 17</a></li>
+        <li><a href="en-01-18.html">Chapter 18</a></li>
+        <li><a href="en-01-19.html">Chapter 19</a></li>
+        <li><a href="en-01-20.html">Chapter 20</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="content-area">
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <div class="quick-controls">
+        <button id="homeButton" title="Go to home">
+          <i class="fas fa-home"></i>
+        </button>
+        <button id="goToSavedBtn" title="Go to saved word">
+          <i class="fas fa-bookmark"></i>
+        </button>
+        <button id="timerButton" title="Reading timer">
+          <i class="fas fa-play"></i>
+        </button>
+        <span id="timerDisplay">00:00</span>
+      </div>
+
+      <div class="book-container" id="bookContainer" style="display: block;">
+        <h1 id="bookTitle">The Secret of Red Gate Farm</h1>
+        <div id="bookContent">
+          <p><span class="word" id="en-01-11_1_1">“When</span> <span class="word" id="en-01-11_1_2">shall</span> <span
+              class="word" id="en-01-11_1_3">we</span> <span class="word" id="en-01-11_1_4">visit</span> <span
+              class="word" id="en-01-11_1_5">the</span> <span class="word" id="en-01-11_1_6">cave?”</span> <span
+              class="word" id="en-01-11_1_7">George</span> <span class="word" id="en-01-11_1_8">asked.</span> </p>
+          <p><span class="word" id="en-01-11_4_1">“As</span> <span class="word" id="en-01-11_4_2">soon</span> <span
+              class="word" id="en-01-11_4_3">as</span> <span class="word" id="en-01-11_4_4">we</span> <span class="word"
+              id="en-01-11_4_5">can,”</span> <span class="word" id="en-01-11_4_6">Nancy</span> <span class="word"
+              id="en-01-11_4_7">answered.</span> <span class="word" id="en-01-11_4_8">“Of</span> <span class="word"
+              id="en-01-11_4_9">course</span> <span class="word" id="en-01-11_4_10">we</span> <span class="word"
+              id="en-01-11_4_11">must</span> <span class="word" id="en-01-11_4_12">help</span> <span class="word"
+              id="en-01-11_4_13">Jo</span> <span class="word" id="en-01-11_4_14">and</span> <span class="word"
+              id="en-01-11_4_15">her</span> <span class="word" id="en-01-11_4_16">grandmother</span> <span class="word"
+              id="en-01-11_4_17">with</span> <span class="word" id="en-01-11_4_18">the</span> <span class="word"
+              id="en-01-11_4_19">work.”</span> </p>
+          <p><span class="word" id="en-01-11_7_1">Since</span> <span class="word" id="en-01-11_7_2">there</span> <span
+              class="word" id="en-01-11_7_3">was</span> <span class="word" id="en-01-11_7_4">no</span> <span
+              class="word" id="en-01-11_7_5">further</span> <span class="word" id="en-01-11_7_6">evidence</span> <span
+              class="word" id="en-01-11_7_7">of</span> <span class="word" id="en-01-11_7_8">activity</span> <span
+              class="word" id="en-01-11_7_9">on</span> <span class="word" id="en-01-11_7_10">the</span> <span
+              class="word" id="en-01-11_7_11">hillside,</span> <span class="word" id="en-01-11_7_12">the</span> <span
+              class="word" id="en-01-11_7_13">girls</span> <span class="word" id="en-01-11_7_14">went</span> <span
+              class="word" id="en-01-11_7_15">to</span> <span class="word" id="en-01-11_7_16">bed.</span> </p>
+          <p><span class="word" id="en-01-11_10_1">The</span> <span class="word" id="en-01-11_10_2">next</span> <span
+              class="word" id="en-01-11_10_3">morning</span> <span class="word" id="en-01-11_10_4">George</span> <span
+              class="word" id="en-01-11_10_5">remarked,</span> <span class="word" id="en-01-11_10_6">as</span> <span
+              class="word" id="en-01-11_10_7">she</span> <span class="word" id="en-01-11_10_8">helped</span> <span
+              class="word" id="en-01-11_10_9">Nancy</span> <span class="word" id="en-01-11_10_10">make</span> <span
+              class="word" id="en-01-11_10_11">her</span> <span class="word" id="en-01-11_10_12">bed,</span> <span
+              class="word" id="en-01-11_10_13">“What</span> <span class="word" id="en-01-11_10_14">do</span> <span
+              class="word" id="en-01-11_10_15">you</span> <span class="word" id="en-01-11_10_16">suppose</span> <span
+              class="word" id="en-01-11_10_17">those</span> <span class="word" id="en-01-11_10_18">men</span> <span
+              class="word" id="en-01-11_10_19">do</span> <span class="word" id="en-01-11_10_20">between</span> <span
+              class="word" id="en-01-11_10_21">ceremonials?</span> <span class="word" id="en-01-11_10_22">It</span>
+            <span class="word" id="en-01-11_10_23">certainly</span> <span class="word" id="en-01-11_10_24">is</span>
+            <span class="word" id="en-01-11_10_25">strange</span> <span class="word" id="en-01-11_10_26">how</span>
+            <span class="word" id="en-01-11_10_27">much</span> <span class="word" id="en-01-11_10_28">time</span> <span
+              class="word" id="en-01-11_10_29">they</span> <span class="word" id="en-01-11_10_30">spend</span> <span
+              class="word" id="en-01-11_10_31">in</span> <span class="word" id="en-01-11_10_32">that</span> <span
+              class="word" id="en-01-11_10_33">cave!”</span> </p>
+          <p><span class="word" id="en-01-11_13_1">“What</span> <span class="word" id="en-01-11_13_2">puzzles</span>
+            <span class="word" id="en-01-11_13_3">me</span> <span class="word" id="en-01-11_13_4">is</span> <span
+              class="word" id="en-01-11_13_5">those</span> <span class="word" id="en-01-11_13_6">automobiles</span>
+            <span class="word" id="en-01-11_13_7">that</span> <span class="word" id="en-01-11_13_8">were</span> <span
+              class="word" id="en-01-11_13_9">on</span> <span class="word" id="en-01-11_13_10">the</span> <span
+              class="word" id="en-01-11_13_11">hillside,”</span> <span class="word" id="en-01-11_13_12">Bess</span>
+            <span class="word" id="en-01-11_13_13">said.</span> <span class="word" id="en-01-11_13_14">“Why</span> <span
+              class="word" id="en-01-11_13_15">did</span> <span class="word" id="en-01-11_13_16">they</span> <span
+              class="word" id="en-01-11_13_17">come?</span> <span class="word" id="en-01-11_13_18">Surely</span> <span
+              class="word" id="en-01-11_13_19">those</span> <span class="word" id="en-01-11_13_20">men</span> <span
+              class="word" id="en-01-11_13_21">were</span> <span class="word" id="en-01-11_13_22">here</span> <span
+              class="word" id="en-01-11_13_23">for</span> <span class="word" id="en-01-11_13_24">something</span> <span
+              class="word" id="en-01-11_13_25">besides</span> <span class="word" id="en-01-11_13_26">ballet</span> <span
+              class="word" id="en-01-11_13_27">dancing.</span> <span class="word" id="en-01-11_13_28">What’s</span>
+            <span class="word" id="en-01-11_13_29">your</span> <span class="word" id="en-01-11_13_30">guess,</span>
+            <span class="word" id="en-01-11_13_31">Nancy?”</span> </p>
+          <p><span class="word" id="en-01-11_16_1">“I’m</span> <span class="word" id="en-01-11_16_2">afraid</span> <span
+              class="word" id="en-01-11_16_3">I</span> <span class="word" id="en-01-11_16_4">haven’t</span> <span
+              class="word" id="en-01-11_16_5">any</span> <span class="word" id="en-01-11_16_6">answer.</span> <span
+              class="word" id="en-01-11_16_7">But</span> <span class="word" id="en-01-11_16_8">I</span> <span
+              class="word" id="en-01-11_16_9">mean</span> <span class="word" id="en-01-11_16_10">to</span> <span
+              class="word" id="en-01-11_16_11">find</span> <span class="word" id="en-01-11_16_12">one</span> <span
+              class="word" id="en-01-11_16_13">for</span> <span class="word" id="en-01-11_16_14">Mrs.</span> <span
+              class="word" id="en-01-11_16_15">Byrd’s</span> <span class="word" id="en-01-11_16_16">and</span> <span
+              class="word" id="en-01-11_16_17">Jo’s</span> <span class="word" id="en-01-11_16_18">sakes.”</span> </p>
+          <p><span class="word" id="en-01-11_19_1">The</span> <span class="word" id="en-01-11_19_2">three</span> <span
+              class="word" id="en-01-11_19_3">girls</span> <span class="word" id="en-01-11_19_4">learned</span> <span
+              class="word" id="en-01-11_19_5">that</span> <span class="word" id="en-01-11_19_6">Reuben</span> <span
+              class="word" id="en-01-11_19_7">was</span> <span class="word" id="en-01-11_19_8">due</span> <span
+              class="word" id="en-01-11_19_9">to</span> <span class="word" id="en-01-11_19_10">be</span> <span
+              class="word" id="en-01-11_19_11">absent</span> <span class="word" id="en-01-11_19_12">most</span> <span
+              class="word" id="en-01-11_19_13">of</span> <span class="word" id="en-01-11_19_14">the</span> <span
+              class="word" id="en-01-11_19_15">day</span> <span class="word" id="en-01-11_19_16">and</span> <span
+              class="word" id="en-01-11_19_17">offered</span> <span class="word" id="en-01-11_19_18">to</span> <span
+              class="word" id="en-01-11_19_19">do</span> <span class="word" id="en-01-11_19_20">his</span> <span
+              class="word" id="en-01-11_19_21">chores.</span> <span class="word" id="en-01-11_19_22">During</span> <span
+              class="word" id="en-01-11_19_23">the</span> <span class="word" id="en-01-11_19_24">morning</span> <span
+              class="word" id="en-01-11_19_25">they</span> <span class="word" id="en-01-11_19_26">picked</span> <span
+              class="word" id="en-01-11_19_27">cherries</span> <span class="word" id="en-01-11_19_28">and</span> <span
+              class="word" id="en-01-11_19_29">took</span> <span class="word" id="en-01-11_19_30">them</span> <span
+              class="word" id="en-01-11_19_31">to</span> <span class="word" id="en-01-11_19_32">town</span> <span
+              class="word" id="en-01-11_19_33">to</span> <span class="word" id="en-01-11_19_34">sell</span> <span
+              class="word" id="en-01-11_19_35">at</span> <span class="word" id="en-01-11_19_36">a</span> <span
+              class="word" id="en-01-11_19_37">local</span> <span class="word" id="en-01-11_19_38">market.</span> <span
+              class="word" id="en-01-11_19_39">When</span> <span class="word" id="en-01-11_19_40">they</span> <span
+              class="word" id="en-01-11_19_41">returned,</span> <span class="word" id="en-01-11_19_42">a</span> <span
+              class="word" id="en-01-11_19_43">small,</span> <span class="word" id="en-01-11_19_44">strange</span> <span
+              class="word" id="en-01-11_19_45">car</span> <span class="word" id="en-01-11_19_46">was</span> <span
+              class="word" id="en-01-11_19_47">standing</span> <span class="word" id="en-01-11_19_48">in</span> <span
+              class="word" id="en-01-11_19_49">the</span> <span class="word" id="en-01-11_19_50">driveway.</span> <span
+              class="word" id="en-01-11_19_51">Loud</span> <span class="word" id="en-01-11_19_52">voices</span> <span
+              class="word" id="en-01-11_19_53">were</span> <span class="word" id="en-01-11_19_54">coming</span> <span
+              class="word" id="en-01-11_19_55">from</span> <span class="word" id="en-01-11_19_56">the</span> <span
+              class="word" id="en-01-11_19_57">living</span> <span class="word" id="en-01-11_19_58">room.</span> </p>
+          <p><span class="word" id="en-01-11_22_1">“I</span> <span class="word" id="en-01-11_22_2">don’t</span> <span
+              class="word" id="en-01-11_22_3">have</span> <span class="word" id="en-01-11_22_4">to</span> <span
+              class="word" id="en-01-11_22_5">sell</span> <span class="word" id="en-01-11_22_6">and</span> <span
+              class="word" id="en-01-11_22_7">I</span> <span class="word" id="en-01-11_22_8">won’t</span> <span
+              class="word" id="en-01-11_22_9">sell!”</span> <span class="word" id="en-01-11_22_10">Mrs.</span> <span
+              class="word" id="en-01-11_22_11">Byrd</span> <span class="word" id="en-01-11_22_12">said</span> <span
+              class="word" id="en-01-11_22_13">with</span> <span class="word" id="en-01-11_22_14">finality</span> <span
+              class="word" id="en-01-11_22_15">in</span> <span class="word" id="en-01-11_22_16">her</span> <span
+              class="word" id="en-01-11_22_17">tone.</span> </p>
+          <p><span class="word" id="en-01-11_25_1">“That’s</span> <span class="word" id="en-01-11_25_2">what</span>
+            <span class="word" id="en-01-11_25_3">you</span> <span class="word" id="en-01-11_25_4">think,”</span> <span
+              class="word" id="en-01-11_25_5">a</span> <span class="word" id="en-01-11_25_6">man</span> <span
+              class="word" id="en-01-11_25_7">said</span> <span class="word" id="en-01-11_25_8">sneeringly.</span> <span
+              class="word" id="en-01-11_25_9">“You’re</span> <span class="word" id="en-01-11_25_10">going</span> <span
+              class="word" id="en-01-11_25_11">to</span> <span class="word" id="en-01-11_25_12">lose</span> <span
+              class="word" id="en-01-11_25_13">this</span> <span class="word" id="en-01-11_25_14">farm</span> <span
+              class="word" id="en-01-11_25_15">and</span> <span class="word" id="en-01-11_25_16">I</span> <span
+              class="word" id="en-01-11_25_17">can</span> <span class="word" id="en-01-11_25_18">buy</span> <span
+              class="word" id="en-01-11_25_19">it</span> <span class="word" id="en-01-11_25_20">cheaper</span> <span
+              class="word" id="en-01-11_25_21">from</span> <span class="word" id="en-01-11_25_22">the</span> <span
+              class="word" id="en-01-11_25_23">bank.</span> <span class="word" id="en-01-11_25_24">Why</span> <span
+              class="word" id="en-01-11_25_25">don’t</span> <span class="word" id="en-01-11_25_26">you</span> <span
+              class="word" id="en-01-11_25_27">sell</span> <span class="word" id="en-01-11_25_28">it</span> <span
+              class="word" id="en-01-11_25_29">to</span> <span class="word" id="en-01-11_25_30">me</span> <span
+              class="word" id="en-01-11_25_31">and</span> <span class="word" id="en-01-11_25_32">make</span> <span
+              class="word" id="en-01-11_25_33">a</span> <span class="word" id="en-01-11_25_34">little</span> <span
+              class="word" id="en-01-11_25_35">profit?</span> <span class="word" id="en-01-11_25_36">Then</span> <span
+              class="word" id="en-01-11_25_37">you</span> <span class="word" id="en-01-11_25_38">can</span> <span
+              class="word" id="en-01-11_25_39">go</span> <span class="word" id="en-01-11_25_40">to</span> <span
+              class="word" id="en-01-11_25_41">the</span> <span class="word" id="en-01-11_25_42">city</span> <span
+              class="word" id="en-01-11_25_43">and</span> <span class="word" id="en-01-11_25_44">take</span> <span
+              class="word" id="en-01-11_25_45">life</span> <span class="word" id="en-01-11_25_46">easy.”</span> </p>
+          <p><span class="word" id="en-01-11_28_1">“We</span> <span class="word" id="en-01-11_28_2">don’t</span> <span
+              class="word" id="en-01-11_28_3">want</span> <span class="word" id="en-01-11_28_4">to</span> <span
+              class="word" id="en-01-11_28_5">go</span> <span class="word" id="en-01-11_28_6">to</span> <span
+              class="word" id="en-01-11_28_7">the</span> <span class="word" id="en-01-11_28_8">city,”</span> <span
+              class="word" id="en-01-11_28_9">Joanne</span> <span class="word" id="en-01-11_28_10">spoke</span> <span
+              class="word" id="en-01-11_28_11">up.</span> <span class="word" id="en-01-11_28_12">“We’re</span> <span
+              class="word" id="en-01-11_28_13">getting</span> <span class="word" id="en-01-11_28_14">along</span> <span
+              class="word" id="en-01-11_28_15">all</span> <span class="word" id="en-01-11_28_16">right</span> <span
+              class="word" id="en-01-11_28_17">here.</span> <span class="word" id="en-01-11_28_18">More</span> <span
+              class="word" id="en-01-11_28_19">boarders</span> <span class="word" id="en-01-11_28_20">are</span> <span
+              class="word" id="en-01-11_28_21">coming</span> <span class="word" id="en-01-11_28_22">soon</span> <span
+              class="word" id="en-01-11_28_23">and</span> <span class="word" id="en-01-11_28_24">we</span> <span
+              class="word" id="en-01-11_28_25">are</span> <span class="word" id="en-01-11_28_26">paying</span> <span
+              class="word" id="en-01-11_28_27">off</span> <span class="word" id="en-01-11_28_28">our</span> <span
+              class="word" id="en-01-11_28_29">back</span> <span class="word" id="en-01-11_28_30">mortgage</span> <span
+              class="word" id="en-01-11_28_31">interest.</span> <span class="word" id="en-01-11_28_32">So</span> <span
+              class="word" id="en-01-11_28_33">we</span> <span class="word" id="en-01-11_28_34">don’t</span> <span
+              class="word" id="en-01-11_28_35">have</span> <span class="word" id="en-01-11_28_36">to</span> <span
+              class="word" id="en-01-11_28_37">sell.”</span> </p>
+          <p><span class="word" id="en-01-11_31_1">Outside,</span> <span class="word" id="en-01-11_31_2">Nancy,</span>
+            <span class="word" id="en-01-11_31_3">Bess,</span> <span class="word" id="en-01-11_31_4">and</span> <span
+              class="word" id="en-01-11_31_5">George</span> <span class="word" id="en-01-11_31_6">looked</span> <span
+              class="word" id="en-01-11_31_7">at</span> <span class="word" id="en-01-11_31_8">one</span> <span
+              class="word" id="en-01-11_31_9">another.</span> <span class="word" id="en-01-11_31_10">The</span> <span
+              class="word" id="en-01-11_31_11">insistent</span> <span class="word" id="en-01-11_31_12">buyer</span>
+            <span class="word" id="en-01-11_31_13">again!</span> <span class="word" id="en-01-11_31_14">Fervently</span>
+            <span class="word" id="en-01-11_31_15">they</span> <span class="word" id="en-01-11_31_16">hoped</span> <span
+              class="word" id="en-01-11_31_17">that</span> <span class="word" id="en-01-11_31_18">Mrs.</span> <span
+              class="word" id="en-01-11_31_19">Byrd</span> <span class="word" id="en-01-11_31_20">would</span> <span
+              class="word" id="en-01-11_31_21">not</span> <span class="word" id="en-01-11_31_22">weaken</span> <span
+              class="word" id="en-01-11_31_23">in</span> <span class="word" id="en-01-11_31_24">her</span> <span
+              class="word" id="en-01-11_31_25">decision.</span> <span class="word" id="en-01-11_31_26">A</span> <span
+              class="word" id="en-01-11_31_27">moment</span> <span class="word" id="en-01-11_31_28">later</span> <span
+              class="word" id="en-01-11_31_29">they</span> <span class="word" id="en-01-11_31_30">felt</span> <span
+              class="word" id="en-01-11_31_31">relieved.</span> </p>
+          <p><span class="word" id="en-01-11_34_1">“I</span> <span class="word" id="en-01-11_34_2">will</span> <span
+              class="word" id="en-01-11_34_3">say</span> <span class="word" id="en-01-11_34_4">good</span> <span
+              class="word" id="en-01-11_34_5">afternoon,</span> <span class="word" id="en-01-11_34_6">Mr.</span> <span
+              class="word" id="en-01-11_34_7">Kent,”</span> <span class="word" id="en-01-11_34_8">Mrs.</span> <span
+              class="word" id="en-01-11_34_9">Byrd</span> <span class="word" id="en-01-11_34_10">said.</span> <span
+              class="word" id="en-01-11_34_11">“Thank</span> <span class="word" id="en-01-11_34_12">you</span> <span
+              class="word" id="en-01-11_34_13">for</span> <span class="word" id="en-01-11_34_14">your</span> <span
+              class="word" id="en-01-11_34_15">offer,</span> <span class="word" id="en-01-11_34_16">but</span> <span
+              class="word" id="en-01-11_34_17">I</span> <span class="word" id="en-01-11_34_18">cannot</span> <span
+              class="word" id="en-01-11_34_19">accept</span> <span class="word" id="en-01-11_34_20">it.”</span> </p>
+          <p><span class="word" id="en-01-11_37_1">“You’ll</span> <span class="word" id="en-01-11_37_2">be</span> <span
+              class="word" id="en-01-11_37_3">sorry!</span> <span class="word" id="en-01-11_37_4">You’ll</span> <span
+              class="word" id="en-01-11_37_5">regret</span> <span class="word" id="en-01-11_37_6">this!”</span> <span
+              class="word" id="en-01-11_37_7">the</span> <span class="word" id="en-01-11_37_8">caller</span> <span
+              class="word" id="en-01-11_37_9">stormed.</span> <span class="word" id="en-01-11_37_10">He</span> <span
+              class="word" id="en-01-11_37_11">came</span> <span class="word" id="en-01-11_37_12">out</span> <span
+              class="word" id="en-01-11_37_13">the</span> <span class="word" id="en-01-11_37_14">screen</span> <span
+              class="word" id="en-01-11_37_15">door,</span> <span class="word" id="en-01-11_37_16">slamming</span> <span
+              class="word" id="en-01-11_37_17">it</span> <span class="word" id="en-01-11_37_18">viciously</span> <span
+              class="word" id="en-01-11_37_19">behind</span> <span class="word" id="en-01-11_37_20">him.</span> </p>
+          <p><span class="word" id="en-01-11_40_1">Nancy</span> <span class="word" id="en-01-11_40_2">stared</span>
+            <span class="word" id="en-01-11_40_3">in</span> <span class="word" id="en-01-11_40_4">surprise.</span> <span
+              class="word" id="en-01-11_40_5">Mr.</span> <span class="word" id="en-01-11_40_6">Kent</span> <span
+              class="word" id="en-01-11_40_7">certainly</span> <span class="word" id="en-01-11_40_8">was</span> <span
+              class="word" id="en-01-11_40_9">one</span> <span class="word" id="en-01-11_40_10">of</span> <span
+              class="word" id="en-01-11_40_11">the</span> <span class="word" id="en-01-11_40_12">most</span> <span
+              class="word" id="en-01-11_40_13">ill-mannered</span> <span class="word" id="en-01-11_40_14">men</span>
+            <span class="word" id="en-01-11_40_15">she</span> <span class="word" id="en-01-11_40_16">had</span> <span
+              class="word" id="en-01-11_40_17">ever</span> <span class="word" id="en-01-11_40_18">seen!</span> <span
+              class="word" id="en-01-11_40_19">And</span> <span class="word" id="en-01-11_40_20">also,</span> <span
+              class="word" id="en-01-11_40_21">she</span> <span class="word" id="en-01-11_40_22">thought</span> <span
+              class="word" id="en-01-11_40_23">wryly,</span> <span class="word" id="en-01-11_40_24">one</span> <span
+              class="word" id="en-01-11_40_25">of</span> <span class="word" id="en-01-11_40_26">the</span> <span
+              class="word" id="en-01-11_40_27">most</span> <span class="word" id="en-01-11_40_28">tenacious!</span>
+            <span class="word" id="en-01-11_40_29">Why</span> <span class="word" id="en-01-11_40_30">was</span> <span
+              class="word" id="en-01-11_40_31">he</span> <span class="word" id="en-01-11_40_32">so</span> <span
+              class="word" id="en-01-11_40_33">determined</span> <span class="word" id="en-01-11_40_34">to</span> <span
+              class="word" id="en-01-11_40_35">buy</span> <span class="word" id="en-01-11_40_36">the</span> <span
+              class="word" id="en-01-11_40_37">Byrd</span> <span class="word" id="en-01-11_40_38">home?</span> </p>
+          <p><span class="word" id="en-01-11_43_1">Mr.</span> <span class="word" id="en-01-11_43_2">Kent,</span> <span
+              class="word" id="en-01-11_43_3">his</span> <span class="word" id="en-01-11_43_4">face</span> <span
+              class="word" id="en-01-11_43_5">red</span> <span class="word" id="en-01-11_43_6">with</span> <span
+              class="word" id="en-01-11_43_7">anger,</span> <span class="word" id="en-01-11_43_8">stepped</span> <span
+              class="word" id="en-01-11_43_9">into</span> <span class="word" id="en-01-11_43_10">his</span> <span
+              class="word" id="en-01-11_43_11">car</span> <span class="word" id="en-01-11_43_12">and</span> <span
+              class="word" id="en-01-11_43_13">sped</span> <span class="word" id="en-01-11_43_14">off,</span> <span
+              class="word" id="en-01-11_43_15">but</span> <span class="word" id="en-01-11_43_16">not</span> <span
+              class="word" id="en-01-11_43_17">before</span> <span class="word" id="en-01-11_43_18">he</span> <span
+              class="word" id="en-01-11_43_19">gave</span> <span class="word" id="en-01-11_43_20">Nancy</span> <span
+              class="word" id="en-01-11_43_21">and</span> <span class="word" id="en-01-11_43_22">her</span> <span
+              class="word" id="en-01-11_43_23">friends</span> <span class="word" id="en-01-11_43_24">a</span> <span
+              class="word" id="en-01-11_43_25">baleful</span> <span class="word" id="en-01-11_43_26">look.</span> <span
+              class="word" id="en-01-11_43_27">“Nice</span> <span class="word" id="en-01-11_43_28">disposition,”</span>
+            <span class="word" id="en-01-11_43_29">George</span> <span class="word" id="en-01-11_43_30">commented</span>
+            <span class="word" id="en-01-11_43_31">sarcastically.</span> </p>
+          <p><span class="word" id="en-01-11_46_1">“I</span> <span class="word" id="en-01-11_46_2">hope</span> <span
+              class="word" id="en-01-11_46_3">he</span> <span class="word" id="en-01-11_46_4">never</span> <span
+              class="word" id="en-01-11_46_5">shows</span> <span class="word" id="en-01-11_46_6">up</span> <span
+              class="word" id="en-01-11_46_7">again,”</span> <span class="word" id="en-01-11_46_8">Bess</span> <span
+              class="word" id="en-01-11_46_9">said</span> <span class="word" id="en-01-11_46_10">firmly.</span> </p>
+          <p><span class="word" id="en-01-11_49_1">The</span> <span class="word" id="en-01-11_49_2">girls</span> <span
+              class="word" id="en-01-11_49_3">found</span> <span class="word" id="en-01-11_49_4">Mrs.</span> <span
+              class="word" id="en-01-11_49_5">Byrd</span> <span class="word" id="en-01-11_49_6">and</span> <span
+              class="word" id="en-01-11_49_7">Joanne</span> <span class="word" id="en-01-11_49_8">quite</span> <span
+              class="word" id="en-01-11_49_9">shaken.</span> <span class="word" id="en-01-11_49_10">“I</span> <span
+              class="word" id="en-01-11_49_11">can’t</span> <span class="word" id="en-01-11_49_12">understand</span>
+            <span class="word" id="en-01-11_49_13">that</span> <span class="word" id="en-01-11_49_14">man’s</span> <span
+              class="word" id="en-01-11_49_15">persistence,”</span> <span class="word" id="en-01-11_49_16">the</span>
+            <span class="word" id="en-01-11_49_17">woman</span> <span class="word" id="en-01-11_49_18">said.</span> </p>
+          <p><span class="word" id="en-01-11_52_1">Nancy</span> <span class="word" id="en-01-11_52_2">was</span> <span
+              class="word" id="en-01-11_52_3">sure</span> <span class="word" id="en-01-11_52_4">the</span> <span
+              class="word" id="en-01-11_52_5">matter</span> <span class="word" id="en-01-11_52_6">was</span> <span
+              class="word" id="en-01-11_52_7">tied</span> <span class="word" id="en-01-11_52_8">in</span> <span
+              class="word" id="en-01-11_52_9">with</span> <span class="word" id="en-01-11_52_10">the</span> <span
+              class="word" id="en-01-11_52_11">cult</span> <span class="word" id="en-01-11_52_12">on</span> <span
+              class="word" id="en-01-11_52_13">the</span> <span class="word" id="en-01-11_52_14">hillside</span> <span
+              class="word" id="en-01-11_52_15">but</span> <span class="word" id="en-01-11_52_16">did</span> <span
+              class="word" id="en-01-11_52_17">not</span> <span class="word" id="en-01-11_52_18">mention</span> <span
+              class="word" id="en-01-11_52_19">this</span> <span class="word" id="en-01-11_52_20">theory.</span> <span
+              class="word" id="en-01-11_52_21">She</span> <span class="word" id="en-01-11_52_22">merely</span> <span
+              class="word" id="en-01-11_52_23">said,</span> <span class="word" id="en-01-11_52_24">“Try</span> <span
+              class="word" id="en-01-11_52_25">not</span> <span class="word" id="en-01-11_52_26">to</span> <span
+              class="word" id="en-01-11_52_27">worry</span> <span class="word" id="en-01-11_52_28">about</span> <span
+              class="word" id="en-01-11_52_29">Mr.</span> <span class="word" id="en-01-11_52_30">Kent.</span> <span
+              class="word" id="en-01-11_52_31">I</span> <span class="word" id="en-01-11_52_32">doubt</span> <span
+              class="word" id="en-01-11_52_33">that</span> <span class="word" id="en-01-11_52_34">he’ll</span> <span
+              class="word" id="en-01-11_52_35">return.”</span> </p>
+          <p><span class="word" id="en-01-11_55_1">Soon</span> <span class="word" id="en-01-11_55_2">the</span> <span
+              class="word" id="en-01-11_55_3">incident</span> <span class="word" id="en-01-11_55_4">was</span> <span
+              class="word" id="en-01-11_55_5">forgotten</span> <span class="word" id="en-01-11_55_6">as</span> <span
+              class="word" id="en-01-11_55_7">preparations</span> <span class="word" id="en-01-11_55_8">for</span> <span
+              class="word" id="en-01-11_55_9">supper</span> <span class="word" id="en-01-11_55_10">were</span> <span
+              class="word" id="en-01-11_55_11">started</span> <span class="word" id="en-01-11_55_12">and</span> <span
+              class="word" id="en-01-11_55_13">the</span> <span class="word" id="en-01-11_55_14">farm</span> <span
+              class="word" id="en-01-11_55_15">animals</span> <span class="word" id="en-01-11_55_16">were</span> <span
+              class="word" id="en-01-11_55_17">fed.</span> <span class="word" id="en-01-11_55_18">George</span> <span
+              class="word" id="en-01-11_55_19">elected</span> <span class="word" id="en-01-11_55_20">to</span> <span
+              class="word" id="en-01-11_55_21">take</span> <span class="word" id="en-01-11_55_22">care</span> <span
+              class="word" id="en-01-11_55_23">of</span> <span class="word" id="en-01-11_55_24">gathering</span> <span
+              class="word" id="en-01-11_55_25">eggs</span> <span class="word" id="en-01-11_55_26">from</span> <span
+              class="word" id="en-01-11_55_27">the</span> <span class="word" id="en-01-11_55_28">henhouse.</span> <span
+              class="word" id="en-01-11_55_29">Bess</span> <span class="word" id="en-01-11_55_30">gave</span> <span
+              class="word" id="en-01-11_55_31">the</span> <span class="word" id="en-01-11_55_32">horse</span> <span
+              class="word" id="en-01-11_55_33">hay</span> <span class="word" id="en-01-11_55_34">and</span> <span
+              class="word" id="en-01-11_55_35">water.</span> </p>
+          <p><span class="word" id="en-01-11_58_1">“I’ll</span> <span class="word" id="en-01-11_58_2">get</span> <span
+              class="word" id="en-01-11_58_3">the</span> <span class="word" id="en-01-11_58_4">cow,”</span> <span
+              class="word" id="en-01-11_58_5">Nancy</span> <span class="word" id="en-01-11_58_6">offered,</span> <span
+              class="word" id="en-01-11_58_7">and</span> <span class="word" id="en-01-11_58_8">went</span> <span
+              class="word" id="en-01-11_58_9">off</span> <span class="word" id="en-01-11_58_10">toward</span> <span
+              class="word" id="en-01-11_58_11">the</span> <span class="word" id="en-01-11_58_12">pasture</span> <span
+              class="word" id="en-01-11_58_13">to</span> <span class="word" id="en-01-11_58_14">drive</span> <span
+              class="word" id="en-01-11_58_15">Primrose</span> <span class="word" id="en-01-11_58_16">in.</span> </p>
+          <p><span class="word" id="en-01-11_61_1">But</span> <span class="word" id="en-01-11_61_2">the</span> <span
+              class="word" id="en-01-11_61_3">cow</span> <span class="word" id="en-01-11_61_4">was</span> <span
+              class="word" id="en-01-11_61_5">not</span> <span class="word" id="en-01-11_61_6">there.</span> <span
+              class="word" id="en-01-11_61_7">Nancy</span> <span class="word" id="en-01-11_61_8">walked</span> <span
+              class="word" id="en-01-11_61_9">around</span> <span class="word" id="en-01-11_61_10">the</span> <span
+              class="word" id="en-01-11_61_11">fence</span> <span class="word" id="en-01-11_61_12">surrounding</span>
+            <span class="word" id="en-01-11_61_13">the</span> <span class="word" id="en-01-11_61_14">field</span> <span
+              class="word" id="en-01-11_61_15">to</span> <span class="word" id="en-01-11_61_16">see</span> <span
+              class="word" id="en-01-11_61_17">if</span> <span class="word" id="en-01-11_61_18">there</span> <span
+              class="word" id="en-01-11_61_19">was</span> <span class="word" id="en-01-11_61_20">any</span> <span
+              class="word" id="en-01-11_61_21">opening</span> <span class="word" id="en-01-11_61_22">through</span>
+            <span class="word" id="en-01-11_61_23">which</span> <span class="word" id="en-01-11_61_24">the</span> <span
+              class="word" id="en-01-11_61_25">animal</span> <span class="word" id="en-01-11_61_26">might</span> <span
+              class="word" id="en-01-11_61_27">have</span> <span class="word" id="en-01-11_61_28">wandered.</span> <span
+              class="word" id="en-01-11_61_29">Finally</span> <span class="word" id="en-01-11_61_30">she</span> <span
+              class="word" id="en-01-11_61_31">found</span> <span class="word" id="en-01-11_61_32">one,</span> <span
+              class="word" id="en-01-11_61_33">and</span> <span class="word" id="en-01-11_61_34">saw</span> <span
+              class="word" id="en-01-11_61_35">hoofprints</span> <span class="word" id="en-01-11_61_36">leading</span>
+            <span class="word" id="en-01-11_61_37">toward</span> <span class="word" id="en-01-11_61_38">a</span> <span
+              class="word" id="en-01-11_61_39">patch</span> <span class="word" id="en-01-11_61_40">of</span> <span
+              class="word" id="en-01-11_61_41">woods.</span> </p>
+          <p><span class="word" id="en-01-11_64_1">Nancy</span> <span class="word" id="en-01-11_64_2">dashed</span>
+            <span class="word" id="en-01-11_64_3">off</span> <span class="word" id="en-01-11_64_4">among</span> <span
+              class="word" id="en-01-11_64_5">the</span> <span class="word" id="en-01-11_64_6">trees.</span> <span
+              class="word" id="en-01-11_64_7">She</span> <span class="word" id="en-01-11_64_8">had</span> <span
+              class="word" id="en-01-11_64_9">never</span> <span class="word" id="en-01-11_64_10">been</span> <span
+              class="word" id="en-01-11_64_11">that</span> <span class="word" id="en-01-11_64_12">way</span> <span
+              class="word" id="en-01-11_64_13">before,</span> <span class="word" id="en-01-11_64_14">but</span> <span
+              class="word" id="en-01-11_64_15">there</span> <span class="word" id="en-01-11_64_16">was</span> <span
+              class="word" id="en-01-11_64_17">only</span> <span class="word" id="en-01-11_64_18">one</span> <span
+              class="word" id="en-01-11_64_19">path</span> <span class="word" id="en-01-11_64_20">to</span> <span
+              class="word" id="en-01-11_64_21">follow.</span> <span class="word" id="en-01-11_64_22">Several</span>
+            <span class="word" id="en-01-11_64_23">times</span> <span class="word" id="en-01-11_64_24">she</span> <span
+              class="word" id="en-01-11_64_25">paused</span> <span class="word" id="en-01-11_64_26">to</span> <span
+              class="word" id="en-01-11_64_27">listen</span> <span class="word" id="en-01-11_64_28">and</span> <span
+              class="word" id="en-01-11_64_29">thought</span> <span class="word" id="en-01-11_64_30">she</span> <span
+              class="word" id="en-01-11_64_31">heard</span> <span class="word" id="en-01-11_64_32">the</span> <span
+              class="word" id="en-01-11_64_33">faint</span> <span class="word" id="en-01-11_64_34">tinkling</span> <span
+              class="word" id="en-01-11_64_35">of</span> <span class="word" id="en-01-11_64_36">a</span> <span
+              class="word" id="en-01-11_64_37">cowbell</span> <span class="word" id="en-01-11_64_38">somewhere</span>
+            <span class="word" id="en-01-11_64_39">ahead</span> <span class="word" id="en-01-11_64_40">of</span> <span
+              class="word" id="en-01-11_64_41">her.</span> </p>
+          <p><span class="word" id="en-01-11_67_1">It</span> <span class="word" id="en-01-11_67_2">was</span> <span
+              class="word" id="en-01-11_67_3">rapidly</span> <span class="word" id="en-01-11_67_4">growing</span> <span
+              class="word" id="en-01-11_67_5">dusky</span> <span class="word" id="en-01-11_67_6">in</span> <span
+              class="word" id="en-01-11_67_7">the</span> <span class="word" id="en-01-11_67_8">woods</span> <span
+              class="word" id="en-01-11_67_9">and</span> <span class="word" id="en-01-11_67_10">Nancy</span> <span
+              class="word" id="en-01-11_67_11">hurried</span> <span class="word" id="en-01-11_67_12">on.</span> <span
+              class="word" id="en-01-11_67_13">Again</span> <span class="word" id="en-01-11_67_14">she</span> <span
+              class="word" id="en-01-11_67_15">stopped</span> <span class="word" id="en-01-11_67_16">to</span> <span
+              class="word" id="en-01-11_67_17">listen.</span> <span class="word" id="en-01-11_67_18">She</span> <span
+              class="word" id="en-01-11_67_19">could</span> <span class="word" id="en-01-11_67_20">hear</span> <span
+              class="word" id="en-01-11_67_21">the</span> <span class="word" id="en-01-11_67_22">cowbell</span> <span
+              class="word" id="en-01-11_67_23">distinctly</span> <span class="word" id="en-01-11_67_24">now.</span> </p>
+          <p><span class="word" id="en-01-11_70_1">“Primrose</span> <span class="word" id="en-01-11_70_2">can’t</span>
+            <span class="word" id="en-01-11_70_3">be</span> <span class="word" id="en-01-11_70_4">far</span> <span
+              class="word" id="en-01-11_70_5">ahead,”</span> <span class="word" id="en-01-11_70_6">she</span> <span
+              class="word" id="en-01-11_70_7">thought</span> <span class="word" id="en-01-11_70_8">in</span> <span
+              class="word" id="en-01-11_70_9">relief,</span> <span class="word" id="en-01-11_70_10">and</span> <span
+              class="word" id="en-01-11_70_11">went</span> <span class="word" id="en-01-11_70_12">in</span> <span
+              class="word" id="en-01-11_70_13">that</span> <span class="word" id="en-01-11_70_14">direction.</span>
+            <span class="word" id="en-01-11_70_15">Nancy</span> <span class="word" id="en-01-11_70_16">finally</span>
+            <span class="word" id="en-01-11_70_17">caught</span> <span class="word" id="en-01-11_70_18">sight</span>
+            <span class="word" id="en-01-11_70_19">of</span> <span class="word" id="en-01-11_70_20">the</span> <span
+              class="word" id="en-01-11_70_21">Jersey</span> <span class="word" id="en-01-11_70_22">contentedly</span>
+            <span class="word" id="en-01-11_70_23">munching</span> <span class="word" id="en-01-11_70_24">grass</span>
+            <span class="word" id="en-01-11_70_25">on</span> <span class="word" id="en-01-11_70_26">the</span> <span
+              class="word" id="en-01-11_70_27">hillside</span> <span class="word" id="en-01-11_70_28">beyond.</span>
+          </p>
+          <p><span class="word" id="en-01-11_73_1">Nancy</span> <span class="word" id="en-01-11_73_2">stopped</span>
+            <span class="word" id="en-01-11_73_3">short</span> <span class="word" id="en-01-11_73_4">and</span> <span
+              class="word" id="en-01-11_73_5">gave</span> <span class="word" id="en-01-11_73_6">a</span> <span
+              class="word" id="en-01-11_73_7">gasp</span> <span class="word" id="en-01-11_73_8">of</span> <span
+              class="word" id="en-01-11_73_9">astonishment—the</span> <span class="word"
+              id="en-01-11_73_10">sound</span> <span class="word" id="en-01-11_73_11">of</span> <span class="word"
+              id="en-01-11_73_12">the</span> <span class="word" id="en-01-11_73_13">cowbell</span> <span class="word"
+              id="en-01-11_73_14">had</span> <span class="word" id="en-01-11_73_15">brought</span> <span class="word"
+              id="en-01-11_73_16">her</span> <span class="word" id="en-01-11_73_17">to</span> <span class="word"
+              id="en-01-11_73_18">the</span> <span class="word" id="en-01-11_73_19">mouth</span> <span class="word"
+              id="en-01-11_73_20">of</span> <span class="word" id="en-01-11_73_21">the</span> <span class="word"
+              id="en-01-11_73_22">cave!</span> </p>
+          <p><span class="word" id="en-01-11_76_1">“I</span> <span class="word" id="en-01-11_76_2">can</span> <span
+              class="word" id="en-01-11_76_3">hardly</span> <span class="word" id="en-01-11_76_4">believe</span> <span
+              class="word" id="en-01-11_76_5">it!”</span> <span class="word" id="en-01-11_76_6">she</span> <span
+              class="word" id="en-01-11_76_7">almost</span> <span class="word" id="en-01-11_76_8">exclaimed</span> <span
+              class="word" id="en-01-11_76_9">aloud.</span> <span class="word" id="en-01-11_76_10">“This</span> <span
+              class="word" id="en-01-11_76_11">must</span> <span class="word" id="en-01-11_76_12">be</span> <span
+              class="word" id="en-01-11_76_13">the</span> <span class="word" id="en-01-11_76_14">other</span> <span
+              class="word" id="en-01-11_76_15">opening</span> <span class="word" id="en-01-11_76_16">near</span> <span
+              class="word" id="en-01-11_76_17">the</span> <span class="word" id="en-01-11_76_18">nature</span> <span
+              class="word" id="en-01-11_76_19">camp</span> <span class="word" id="en-01-11_76_20">Jo</span> <span
+              class="word" id="en-01-11_76_21">told</span> <span class="word" id="en-01-11_76_22">me</span> <span
+              class="word" id="en-01-11_76_23">about!”</span> </p>
+          <p><span class="word" id="en-01-11_79_1">Eagerly</span> <span class="word" id="en-01-11_79_2">Nancy</span>
+            <span class="word" id="en-01-11_79_3">rushed</span> <span class="word" id="en-01-11_79_4">toward</span>
+            <span class="word" id="en-01-11_79_5">the</span> <span class="word" id="en-01-11_79_6">cave.</span> <span
+              class="word" id="en-01-11_79_7">But</span> <span class="word" id="en-01-11_79_8">no</span> <span
+              class="word" id="en-01-11_79_9">sooner</span> <span class="word" id="en-01-11_79_10">had</span> <span
+              class="word" id="en-01-11_79_11">she</span> <span class="word" id="en-01-11_79_12">peered</span> <span
+              class="word" id="en-01-11_79_13">into</span> <span class="word" id="en-01-11_79_14">the</span> <span
+              class="word" id="en-01-11_79_15">dark</span> <span class="word" id="en-01-11_79_16">entrance</span> <span
+              class="word" id="en-01-11_79_17">than</span> <span class="word" id="en-01-11_79_18">she</span> <span
+              class="word" id="en-01-11_79_19">was</span> <span class="word" id="en-01-11_79_20">startled</span> <span
+              class="word" id="en-01-11_79_21">by</span> <span class="word" id="en-01-11_79_22">the</span> <span
+              class="word" id="en-01-11_79_23">crackling</span> <span class="word" id="en-01-11_79_24">of</span> <span
+              class="word" id="en-01-11_79_25">a</span> <span class="word" id="en-01-11_79_26">twig</span> <span
+              class="word" id="en-01-11_79_27">behind</span> <span class="word" id="en-01-11_79_28">her.</span> <span
+              class="word" id="en-01-11_79_29">Nancy</span> <span class="word" id="en-01-11_79_30">wheeled</span> <span
+              class="word" id="en-01-11_79_31">to</span> <span class="word" id="en-01-11_79_32">find</span> <span
+              class="word" id="en-01-11_79_33">a</span> <span class="word" id="en-01-11_79_34">man</span> <span
+              class="word" id="en-01-11_79_35">standing</span> <span class="word" id="en-01-11_79_36">not</span> <span
+              class="word" id="en-01-11_79_37">three</span> <span class="word" id="en-01-11_79_38">feet</span> <span
+              class="word" id="en-01-11_79_39">away</span> <span class="word" id="en-01-11_79_40">from</span> <span
+              class="word" id="en-01-11_79_41">her!</span> </p>
+          <p><span class="word" id="en-01-11_82_1">He</span> <span class="word" id="en-01-11_82_2">seemed</span> <span
+              class="word" id="en-01-11_82_3">to</span> <span class="word" id="en-01-11_82_4">have</span> <span
+              class="word" id="en-01-11_82_5">risen</span> <span class="word" id="en-01-11_82_6">from</span> <span
+              class="word" id="en-01-11_82_7">the</span> <span class="word" id="en-01-11_82_8">bushes</span> <span
+              class="word" id="en-01-11_82_9">which</span> <span class="word" id="en-01-11_82_10">half</span> <span
+              class="word" id="en-01-11_82_11">hid</span> <span class="word" id="en-01-11_82_12">the</span> <span
+              class="word" id="en-01-11_82_13">opening</span> <span class="word" id="en-01-11_82_14">of</span> <span
+              class="word" id="en-01-11_82_15">the</span> <span class="word" id="en-01-11_82_16">cave.</span> <span
+              class="word" id="en-01-11_82_17">Instantly</span> <span class="word" id="en-01-11_82_18">it</span> <span
+              class="word" id="en-01-11_82_19">flashed</span> <span class="word" id="en-01-11_82_20">through</span>
+            <span class="word" id="en-01-11_82_21">Nancy’s</span> <span class="word" id="en-01-11_82_22">mind</span>
+            <span class="word" id="en-01-11_82_23">that</span> <span class="word" id="en-01-11_82_24">he</span> <span
+              class="word" id="en-01-11_82_25">had</span> <span class="word" id="en-01-11_82_26">been</span> <span
+              class="word" id="en-01-11_82_27">stationed</span> <span class="word" id="en-01-11_82_28">there</span>
+            <span class="word" id="en-01-11_82_29">to</span> <span class="word" id="en-01-11_82_30">see</span> <span
+              class="word" id="en-01-11_82_31">that</span> <span class="word" id="en-01-11_82_32">intruders</span> <span
+              class="word" id="en-01-11_82_33">did</span> <span class="word" id="en-01-11_82_34">not</span> <span
+              class="word" id="en-01-11_82_35">enter.</span> </p>
+          <p><span class="word" id="en-01-11_85_1">“What’re</span> <span class="word" id="en-01-11_85_2">you</span>
+            <span class="word" id="en-01-11_85_3">doing</span> <span class="word" id="en-01-11_85_4">here?”</span> <span
+              class="word" id="en-01-11_85_5">he</span> <span class="word" id="en-01-11_85_6">asked,</span> <span
+              class="word" id="en-01-11_85_7">his</span> <span class="word" id="en-01-11_85_8">voice</span> <span
+              class="word" id="en-01-11_85_9">as</span> <span class="word" id="en-01-11_85_10">cold</span> <span
+              class="word" id="en-01-11_85_11">as</span> <span class="word" id="en-01-11_85_12">steel.</span> </p>
+          <p><span class="word" id="en-01-11_88_1">Nancy</span> <span class="word" id="en-01-11_88_2">recoiled.</span>
+            <span class="word" id="en-01-11_88_3">The</span> <span class="word" id="en-01-11_88_4">man</span> <span
+              class="word" id="en-01-11_88_5">stood</span> <span class="word" id="en-01-11_88_6">in</span> <span
+              class="word" id="en-01-11_88_7">the</span> <span class="word" id="en-01-11_88_8">shadows</span> <span
+              class="word" id="en-01-11_88_9">of</span> <span class="word" id="en-01-11_88_10">the</span> <span
+              class="word" id="en-01-11_88_11">shrubbery</span> <span class="word" id="en-01-11_88_12">so</span> <span
+              class="word" id="en-01-11_88_13">that</span> <span class="word" id="en-01-11_88_14">she</span> <span
+              class="word" id="en-01-11_88_15">could</span> <span class="word" id="en-01-11_88_16">not</span> <span
+              class="word" id="en-01-11_88_17">see</span> <span class="word" id="en-01-11_88_18">his</span> <span
+              class="word" id="en-01-11_88_19">face</span> <span class="word" id="en-01-11_88_20">distinctly.</span>
+            <span class="word" id="en-01-11_88_21">But</span> <span class="word" id="en-01-11_88_22">at</span> <span
+              class="word" id="en-01-11_88_23">the</span> <span class="word" id="en-01-11_88_24">sound</span> <span
+              class="word" id="en-01-11_88_25">of</span> <span class="word" id="en-01-11_88_26">his</span> <span
+              class="word" id="en-01-11_88_27">voice</span> <span class="word" id="en-01-11_88_28">she</span> <span
+              class="word" id="en-01-11_88_29">knew</span> <span class="word" id="en-01-11_88_30">instantly</span> <span
+              class="word" id="en-01-11_88_31">she</span> <span class="word" id="en-01-11_88_32">was</span> <span
+              class="word" id="en-01-11_88_33">in</span> <span class="word" id="en-01-11_88_34">danger.</span> </p>
+          <p><span class="word" id="en-01-11_91_1">“I</span> <span class="word" id="en-01-11_91_2">must</span> <span
+              class="word" id="en-01-11_91_3">persuade</span> <span class="word" id="en-01-11_91_4">him</span> <span
+              class="word" id="en-01-11_91_5">I</span> <span class="word" id="en-01-11_91_6">wasn’t</span> <span
+              class="word" id="en-01-11_91_7">spying,”</span> <span class="word" id="en-01-11_91_8">she</span> <span
+              class="word" id="en-01-11_91_9">thought</span> <span class="word" id="en-01-11_91_10">desperately.</span>
+          </p>
+          <p><span class="word" id="en-01-11_94_1">“Better</span> <span class="word" id="en-01-11_94_2">speak</span>
+            <span class="word" id="en-01-11_94_3">up!”</span> <span class="word" id="en-01-11_94_4">the</span> <span
+              class="word" id="en-01-11_94_5">man</span> <span class="word" id="en-01-11_94_6">snarled.</span> <span
+              class="word" id="en-01-11_94_7">“What’re</span> <span class="word" id="en-01-11_94_8">you</span> <span
+              class="word" id="en-01-11_94_9">doin’</span> <span class="word" id="en-01-11_94_10">here,</span> <span
+              class="word" id="en-01-11_94_11">girlie?”</span> </p>
+          <p><span class="word" id="en-01-11_97_1">“I</span> <span class="word" id="en-01-11_97_2">was</span> <span
+              class="word" id="en-01-11_97_3">hunting</span> <span class="word" id="en-01-11_97_4">for</span> <span
+              class="word" id="en-01-11_97_5">that</span> <span class="word" id="en-01-11_97_6">cow,”</span> <span
+              class="word" id="en-01-11_97_7">Nancy</span> <span class="word" id="en-01-11_97_8">replied</span> <span
+              class="word" id="en-01-11_97_9">as</span> <span class="word" id="en-01-11_97_10">casually</span> <span
+              class="word" id="en-01-11_97_11">as</span> <span class="word" id="en-01-11_97_12">possible.</span> <span
+              class="word" id="en-01-11_97_13">She</span> <span class="word" id="en-01-11_97_14">pointed</span> <span
+              class="word" id="en-01-11_97_15">to</span> <span class="word" id="en-01-11_97_16">the</span> <span
+              class="word" id="en-01-11_97_17">Jersey,</span> <span class="word" id="en-01-11_97_18">which</span> <span
+              class="word" id="en-01-11_97_19">was</span> <span class="word" id="en-01-11_97_20">grazing</span> <span
+              class="word" id="en-01-11_97_21">a</span> <span class="word" id="en-01-11_97_22">short</span> <span
+              class="word" id="en-01-11_97_23">distance</span> <span class="word" id="en-01-11_97_24">away.</span> </p>
+          <p><span class="word" id="en-01-11_100_1">She</span> <span class="word" id="en-01-11_100_2">held</span> <span
+              class="word" id="en-01-11_100_3">her</span> <span class="word" id="en-01-11_100_4">ground</span> <span
+              class="word" id="en-01-11_100_5">defiantly.</span> <span class="word" id="en-01-11_100_6">There</span>
+            <span class="word" id="en-01-11_100_7">was</span> <span class="word" id="en-01-11_100_8">a</span> <span
+              class="word" id="en-01-11_100_9">moment’s</span> <span class="word" id="en-01-11_100_10">silence.</span>
+            <span class="word" id="en-01-11_100_11">Nancy</span> <span class="word" id="en-01-11_100_12">could</span>
+            <span class="word" id="en-01-11_100_13">feel</span> <span class="word" id="en-01-11_100_14">that</span>
+            <span class="word" id="en-01-11_100_15">the</span> <span class="word" id="en-01-11_100_16">man</span> <span
+              class="word" id="en-01-11_100_17">was</span> <span class="word" id="en-01-11_100_18">staring</span> <span
+              class="word" id="en-01-11_100_19">at</span> <span class="word" id="en-01-11_100_20">her,</span> <span
+              class="word" id="en-01-11_100_21">as</span> <span class="word" id="en-01-11_100_22">if</span> <span
+              class="word" id="en-01-11_100_23">undecided</span> <span class="word" id="en-01-11_100_24">whether</span>
+            <span class="word" id="en-01-11_100_25">or</span> <span class="word" id="en-01-11_100_26">not</span> <span
+              class="word" id="en-01-11_100_27">to</span> <span class="word" id="en-01-11_100_28">believe</span> <span
+              class="word" id="en-01-11_100_29">her.</span> </p>
+          <p><span class="word" id="en-01-11_103_1">“So</span> <span class="word" id="en-01-11_103_2">you</span> <span
+              class="word" id="en-01-11_103_3">were</span> <span class="word" id="en-01-11_103_4">after</span> <span
+              class="word" id="en-01-11_103_5">the</span> <span class="word" id="en-01-11_103_6">cow?”</span> <span
+              class="word" id="en-01-11_103_7">the</span> <span class="word" id="en-01-11_103_8">lookout</span> <span
+              class="word" id="en-01-11_103_9">growled.</span> <span class="word" id="en-01-11_103_10">“Then</span>
+            <span class="word" id="en-01-11_103_11">why</span> <span class="word" id="en-01-11_103_12">are</span> <span
+              class="word" id="en-01-11_103_13">you</span> <span class="word" id="en-01-11_103_14">by</span> <span
+              class="word" id="en-01-11_103_15">this</span> <span class="word" id="en-01-11_103_16">cave?”</span> </p>
+          <p><span class="word" id="en-01-11_106_1">“Why,</span> <span class="word" id="en-01-11_106_2">I</span> <span
+              class="word" id="en-01-11_106_3">was</span> <span class="word" id="en-01-11_106_4">just</span> <span
+              class="word" id="en-01-11_106_5">wondering</span> <span class="word" id="en-01-11_106_6">what</span> <span
+              class="word" id="en-01-11_106_7">was</span> <span class="word" id="en-01-11_106_8">inside,”</span> <span
+              class="word" id="en-01-11_106_9">Nancy</span> <span class="word" id="en-01-11_106_10">said</span> <span
+              class="word" id="en-01-11_106_11">innocently.</span> <span class="word"
+              id="en-01-11_106_12">“Surely</span> <span class="word" id="en-01-11_106_13">there’s</span> <span
+              class="word" id="en-01-11_106_14">no</span> <span class="word" id="en-01-11_106_15">harm</span> <span
+              class="word" id="en-01-11_106_16">in</span> <span class="word" id="en-01-11_106_17">looking.”</span> </p>
+          <p><span class="word" id="en-01-11_109_1">“You’ve</span> <span class="word" id="en-01-11_109_2">no</span>
+            <span class="word" id="en-01-11_109_3">business</span> <span class="word" id="en-01-11_109_4">around</span>
+            <span class="word" id="en-01-11_109_5">here!”</span> <span class="word" id="en-01-11_109_6">the</span> <span
+              class="word" id="en-01-11_109_7">man</span> <span class="word" id="en-01-11_109_8">snapped.</span> <span
+              class="word" id="en-01-11_109_9">“This</span> <span class="word" id="en-01-11_109_10">property</span>
+            <span class="word" id="en-01-11_109_11">belongs</span> <span class="word" id="en-01-11_109_12">to</span>
+            <span class="word" id="en-01-11_109_13">the</span> <span class="word" id="en-01-11_109_14">members</span>
+            <span class="word" id="en-01-11_109_15">of</span> <span class="word" id="en-01-11_109_16">the</span> <span
+              class="word" id="en-01-11_109_17">Black</span> <span class="word" id="en-01-11_109_18">Snake</span> <span
+              class="word" id="en-01-11_109_19">Colony.”</span> </p>
+          <p><span class="word" id="en-01-11_112_1">“Oh!”</span> <span class="word" id="en-01-11_112_2">Nancy</span>
+            <span class="word" id="en-01-11_112_3">exclaimed</span> <span class="word" id="en-01-11_112_4">in</span>
+            <span class="word" id="en-01-11_112_5">pretended</span> <span class="word" id="en-01-11_112_6">awe.</span>
+            <span class="word" id="en-01-11_112_7">“Then</span> <span class="word" id="en-01-11_112_8">you</span> <span
+              class="word" id="en-01-11_112_9">must</span> <span class="word" id="en-01-11_112_10">belong</span> <span
+              class="word" id="en-01-11_112_11">to</span> <span class="word" id="en-01-11_112_12">the</span> <span
+              class="word" id="en-01-11_112_13">colony.</span> <span class="word" id="en-01-11_112_14">How</span> <span
+              class="word" id="en-01-11_112_15">very</span> <span class="word" id="en-01-11_112_16">interesting!”</span>
+          </p>
+          <p><span class="word" id="en-01-11_115_1">The</span> <span class="word" id="en-01-11_115_2">man</span> <span
+              class="word" id="en-01-11_115_3">made</span> <span class="word" id="en-01-11_115_4">no</span> <span
+              class="word" id="en-01-11_115_5">response</span> <span class="word" id="en-01-11_115_6">to</span> <span
+              class="word" id="en-01-11_115_7">Nancy’s</span> <span class="word" id="en-01-11_115_8">remark.</span>
+            <span class="word" id="en-01-11_115_9">Instead,</span> <span class="word" id="en-01-11_115_10">he</span>
+            <span class="word" id="en-01-11_115_11">muttered:</span> </p>
+          <p><span class="word" id="en-01-11_118_1">“Round</span> <span class="word" id="en-01-11_118_2">up</span> <span
+              class="word" id="en-01-11_118_3">that</span> <span class="word" id="en-01-11_118_4">old</span> <span
+              class="word" id="en-01-11_118_5">cow</span> <span class="word" id="en-01-11_118_6">of</span> <span
+              class="word" id="en-01-11_118_7">yours</span> <span class="word" id="en-01-11_118_8">and</span> <span
+              class="word" id="en-01-11_118_9">get</span> <span class="word" id="en-01-11_118_10">out</span> <span
+              class="word" id="en-01-11_118_11">of</span> <span class="word" id="en-01-11_118_12">here!</span> <span
+              class="word" id="en-01-11_118_13">And</span> <span class="word" id="en-01-11_118_14">don’t</span> <span
+              class="word" id="en-01-11_118_15">come</span> <span class="word" id="en-01-11_118_16">trespassing</span>
+            <span class="word" id="en-01-11_118_17">again!”</span> </p>
+          <p><span class="word" id="en-01-11_121_1">Nancy</span> <span class="word" id="en-01-11_121_2">knew</span>
+            <span class="word" id="en-01-11_121_3">she</span> <span class="word" id="en-01-11_121_4">would</span> <span
+              class="word" id="en-01-11_121_5">gain</span> <span class="word" id="en-01-11_121_6">nothing</span> <span
+              class="word" id="en-01-11_121_7">by</span> <span class="word" id="en-01-11_121_8">arguing.</span> <span
+              class="word" id="en-01-11_121_9">Obediently</span> <span class="word" id="en-01-11_121_10">she</span>
+            <span class="word" id="en-01-11_121_11">overtook</span> <span class="word" id="en-01-11_121_12">the</span>
+            <span class="word" id="en-01-11_121_13">cow</span> <span class="word" id="en-01-11_121_14">and</span> <span
+              class="word" id="en-01-11_121_15">headed</span> <span class="word" id="en-01-11_121_16">her</span> <span
+              class="word" id="en-01-11_121_17">back</span> <span class="word" id="en-01-11_121_18">toward</span> <span
+              class="word" id="en-01-11_121_19">Red</span> <span class="word" id="en-01-11_121_20">Gate.</span> <span
+              class="word" id="en-01-11_121_21">The</span> <span class="word" id="en-01-11_121_22">man</span> <span
+              class="word" id="en-01-11_121_23">watched</span> <span class="word" id="en-01-11_121_24">until</span>
+            <span class="word" id="en-01-11_121_25">Nancy</span> <span class="word"
+              id="en-01-11_121_26">disappeared</span> <span class="word" id="en-01-11_121_27">into</span> <span
+              class="word" id="en-01-11_121_28">the</span> <span class="word" id="en-01-11_121_29">woods.</span> </p>
+          <p><span class="word" id="en-01-11_124_1">As</span> <span class="word" id="en-01-11_124_2">soon</span> <span
+              class="word" id="en-01-11_124_3">as</span> <span class="word" id="en-01-11_124_4">she</span> <span
+              class="word" id="en-01-11_124_5">had</span> <span class="word" id="en-01-11_124_6">started</span> <span
+              class="word" id="en-01-11_124_7">the</span> <span class="word" id="en-01-11_124_8">cow</span> <span
+              class="word" id="en-01-11_124_9">down</span> <span class="word" id="en-01-11_124_10">the</span> <span
+              class="word" id="en-01-11_124_11">path,</span> <span class="word" id="en-01-11_124_12">however,</span>
+            <span class="word" id="en-01-11_124_13">Nancy</span> <span class="word" id="en-01-11_124_14">quietly</span>
+            <span class="word" id="en-01-11_124_15">retraced</span> <span class="word" id="en-01-11_124_16">her</span>
+            <span class="word" id="en-01-11_124_17">steps.</span> <span class="word" id="en-01-11_124_18">She</span>
+            <span class="word" id="en-01-11_124_19">reached</span> <span class="word" id="en-01-11_124_20">the</span>
+            <span class="word" id="en-01-11_124_21">edge</span> <span class="word" id="en-01-11_124_22">of</span> <span
+              class="word" id="en-01-11_124_23">the</span> <span class="word" id="en-01-11_124_24">woods</span> <span
+              class="word" id="en-01-11_124_25">just</span> <span class="word" id="en-01-11_124_26">in</span> <span
+              class="word" id="en-01-11_124_27">time</span> <span class="word" id="en-01-11_124_28">to</span> <span
+              class="word" id="en-01-11_124_29">catch</span> <span class="word" id="en-01-11_124_30">a</span> <span
+              class="word" id="en-01-11_124_31">glimpse</span> <span class="word" id="en-01-11_124_32">of</span> <span
+              class="word" id="en-01-11_124_33">the</span> <span class="word" id="en-01-11_124_34">man</span> <span
+              class="word" id="en-01-11_124_35">entering</span> <span class="word" id="en-01-11_124_36">the</span> <span
+              class="word" id="en-01-11_124_37">cave.</span> </p>
+          <p><span class="word" id="en-01-11_127_1">“That</span> <span class="word" id="en-01-11_127_2">proves</span>
+            <span class="word" id="en-01-11_127_3">he’s</span> <span class="word" id="en-01-11_127_4">one</span> <span
+              class="word" id="en-01-11_127_5">of</span> <span class="word" id="en-01-11_127_6">the</span> <span
+              class="word" id="en-01-11_127_7">Black</span> <span class="word" id="en-01-11_127_8">Snake</span> <span
+              class="word" id="en-01-11_127_9">group,”</span> <span class="word" id="en-01-11_127_10">she</span> <span
+              class="word" id="en-01-11_127_11">told</span> <span class="word" id="en-01-11_127_12">herself.</span>
+            <span class="word" id="en-01-11_127_13">“He</span> <span class="word" id="en-01-11_127_14">was</span> <span
+              class="word" id="en-01-11_127_15">acting</span> <span class="word" id="en-01-11_127_16">as</span> <span
+              class="word" id="en-01-11_127_17">a</span> <span class="word" id="en-01-11_127_18">guard</span> <span
+              class="word" id="en-01-11_127_19">for</span> <span class="word" id="en-01-11_127_20">them.”</span> </p>
+          <p><span class="word" id="en-01-11_130_1">For</span> <span class="word" id="en-01-11_130_2">an</span> <span
+              class="word" id="en-01-11_130_3">instant</span> <span class="word" id="en-01-11_130_4">Nancy</span> <span
+              class="word" id="en-01-11_130_5">was</span> <span class="word" id="en-01-11_130_6">tempted</span> <span
+              class="word" id="en-01-11_130_7">to</span> <span class="word" id="en-01-11_130_8">follow,</span> <span
+              class="word" id="en-01-11_130_9">but</span> <span class="word" id="en-01-11_130_10">common</span> <span
+              class="word" id="en-01-11_130_11">sense</span> <span class="word" id="en-01-11_130_12">told</span> <span
+              class="word" id="en-01-11_130_13">her</span> <span class="word" id="en-01-11_130_14">not</span> <span
+              class="word" id="en-01-11_130_15">to</span> <span class="word" id="en-01-11_130_16">press</span> <span
+              class="word" id="en-01-11_130_17">her</span> <span class="word" id="en-01-11_130_18">luck.</span> <span
+              class="word" id="en-01-11_130_19">The</span> <span class="word" id="en-01-11_130_20">lookout</span> <span
+              class="word" id="en-01-11_130_21">seemed</span> <span class="word" id="en-01-11_130_22">determined</span>
+            <span class="word" id="en-01-11_130_23">enough</span> <span class="word" id="en-01-11_130_24">to</span>
+            <span class="word" id="en-01-11_130_25">make</span> <span class="word" id="en-01-11_130_26">trouble</span>
+            <span class="word" id="en-01-11_130_27">for</span> <span class="word" id="en-01-11_130_28">her</span> <span
+              class="word" id="en-01-11_130_29">if</span> <span class="word" id="en-01-11_130_30">she</span> <span
+              class="word" id="en-01-11_130_31">took</span> <span class="word" id="en-01-11_130_32">the</span> <span
+              class="word" id="en-01-11_130_33">chance.</span> <span class="word"
+              id="en-01-11_130_34">Reluctantly,</span> <span class="word" id="en-01-11_130_35">the</span> <span
+              class="word" id="en-01-11_130_36">young</span> <span class="word" id="en-01-11_130_37">sleuth</span> <span
+              class="word" id="en-01-11_130_38">turned</span> <span class="word" id="en-01-11_130_39">back</span> <span
+              class="word" id="en-01-11_130_40">toward</span> <span class="word" id="en-01-11_130_41">the</span> <span
+              class="word" id="en-01-11_130_42">farm.</span> </p>
+          <p><span class="word" id="en-01-11_133_1">It</span> <span class="word" id="en-01-11_133_2">was</span> <span
+              class="word" id="en-01-11_133_3">clear</span> <span class="word" id="en-01-11_133_4">to</span> <span
+              class="word" id="en-01-11_133_5">Nancy</span> <span class="word" id="en-01-11_133_6">that</span> <span
+              class="word" id="en-01-11_133_7">the</span> <span class="word" id="en-01-11_133_8">entire</span> <span
+              class="word" id="en-01-11_133_9">business</span> <span class="word" id="en-01-11_133_10">of</span> <span
+              class="word" id="en-01-11_133_11">the</span> <span class="word" id="en-01-11_133_12">Black</span> <span
+              class="word" id="en-01-11_133_13">Snake</span> <span class="word" id="en-01-11_133_14">group</span> <span
+              class="word" id="en-01-11_133_15">was</span> <span class="word" id="en-01-11_133_16">anything</span> <span
+              class="word" id="en-01-11_133_17">but</span> <span class="word" id="en-01-11_133_18">open</span> <span
+              class="word" id="en-01-11_133_19">and</span> <span class="word" id="en-01-11_133_20">aboveboard!</span>
+            <span class="word" id="en-01-11_133_21">Obviously</span> <span class="word" id="en-01-11_133_22">they</span>
+            <span class="word" id="en-01-11_133_23">were</span> <span class="word" id="en-01-11_133_24">afraid</span>
+            <span class="word" id="en-01-11_133_25">that</span> <span class="word" id="en-01-11_133_26">some</span>
+            <span class="word" id="en-01-11_133_27">of</span> <span class="word" id="en-01-11_133_28">the</span> <span
+              class="word" id="en-01-11_133_29">countryfolk</span> <span class="word" id="en-01-11_133_30">would</span>
+            <span class="word" id="en-01-11_133_31">attempt</span> <span class="word" id="en-01-11_133_32">to</span>
+            <span class="word" id="en-01-11_133_33">investigate.</span> </p>
+          <p><span class="word" id="en-01-11_136_1">When</span> <span class="word" id="en-01-11_136_2">Nancy</span>
+            <span class="word" id="en-01-11_136_3">finally</span> <span class="word" id="en-01-11_136_4">reached</span>
+            <span class="word" id="en-01-11_136_5">the</span> <span class="word" id="en-01-11_136_6">barn</span> <span
+              class="word" id="en-01-11_136_7">and</span> <span class="word" id="en-01-11_136_8">Joanne</span> <span
+              class="word" id="en-01-11_136_9">began</span> <span class="word" id="en-01-11_136_10">to</span> <span
+              class="word" id="en-01-11_136_11">milk</span> <span class="word" id="en-01-11_136_12">Primrose,</span>
+            <span class="word" id="en-01-11_136_13">the</span> <span class="word" id="en-01-11_136_14">other</span>
+            <span class="word" id="en-01-11_136_15">girls</span> <span class="word" id="en-01-11_136_16">plied</span>
+            <span class="word" id="en-01-11_136_17">their</span> <span class="word" id="en-01-11_136_18">friend</span>
+            <span class="word" id="en-01-11_136_19">with</span> <span class="word"
+              id="en-01-11_136_20">questions.</span> </p>
+          <p><span class="word" id="en-01-11_139_1">“We</span> <span class="word" id="en-01-11_139_2">were</span> <span
+              class="word" id="en-01-11_139_3">beginning</span> <span class="word" id="en-01-11_139_4">to</span> <span
+              class="word" id="en-01-11_139_5">worry,”</span> <span class="word" id="en-01-11_139_6">Joanne</span> <span
+              class="word" id="en-01-11_139_7">said</span> <span class="word" id="en-01-11_139_8">in</span> <span
+              class="word" id="en-01-11_139_9">relief.</span> <span class="word" id="en-01-11_139_10">“I</span> <span
+              class="word" id="en-01-11_139_11">wouldn’t</span> <span class="word" id="en-01-11_139_12">have</span>
+            <span class="word" id="en-01-11_139_13">let</span> <span class="word" id="en-01-11_139_14">you</span> <span
+              class="word" id="en-01-11_139_15">go</span> <span class="word" id="en-01-11_139_16">alone</span> <span
+              class="word" id="en-01-11_139_17">if</span> <span class="word" id="en-01-11_139_18">I’d</span> <span
+              class="word" id="en-01-11_139_19">known</span> <span class="word" id="en-01-11_139_20">this</span> <span
+              class="word" id="en-01-11_139_21">cow</span> <span class="word" id="en-01-11_139_22">of</span> <span
+              class="word" id="en-01-11_139_23">ours</span> <span class="word" id="en-01-11_139_24">would</span> <span
+              class="word" id="en-01-11_139_25">stray</span> <span class="word" id="en-01-11_139_26">so</span> <span
+              class="word" id="en-01-11_139_27">far.”</span> </p>
+          <p><span class="word" id="en-01-11_142_1">“I’m</span> <span class="word" id="en-01-11_142_2">glad</span> <span
+              class="word" id="en-01-11_142_3">I</span> <span class="word" id="en-01-11_142_4">went,”</span> <span
+              class="word" id="en-01-11_142_5">Nancy</span> <span class="word" id="en-01-11_142_6">said</span> <span
+              class="word" id="en-01-11_142_7">quickly.</span> </p>
+          <p><span class="word" id="en-01-11_145_1">She</span> <span class="word" id="en-01-11_145_2">then</span> <span
+              class="word" id="en-01-11_145_3">told</span> <span class="word" id="en-01-11_145_4">the</span> <span
+              class="word" id="en-01-11_145_5">others</span> <span class="word" id="en-01-11_145_6">what</span> <span
+              class="word" id="en-01-11_145_7">had</span> <span class="word" id="en-01-11_145_8">taken</span> <span
+              class="word" id="en-01-11_145_9">place</span> <span class="word" id="en-01-11_145_10">near</span> <span
+              class="word" id="en-01-11_145_11">the</span> <span class="word" id="en-01-11_145_12">mouth</span> <span
+              class="word" id="en-01-11_145_13">of</span> <span class="word" id="en-01-11_145_14">the</span> <span
+              class="word" id="en-01-11_145_15">cave.</span> <span class="word" id="en-01-11_145_16">They</span> <span
+              class="word" id="en-01-11_145_17">gasped</span> <span class="word" id="en-01-11_145_18">in</span> <span
+              class="word" id="en-01-11_145_19">astonishment</span> <span class="word" id="en-01-11_145_20">upon</span>
+            <span class="word" id="en-01-11_145_21">hearing</span> <span class="word" id="en-01-11_145_22">of</span>
+            <span class="word" id="en-01-11_145_23">her</span> <span class="word" id="en-01-11_145_24">encounter</span>
+            <span class="word" id="en-01-11_145_25">with</span> <span class="word" id="en-01-11_145_26">the</span> <span
+              class="word" id="en-01-11_145_27">lookout.</span> </p>
+          <p><span class="word" id="en-01-11_148_1">“Weren’t</span> <span class="word" id="en-01-11_148_2">you</span>
+            <span class="word" id="en-01-11_148_3">frightened</span> <span class="word" id="en-01-11_148_4">when</span>
+            <span class="word" id="en-01-11_148_5">he</span> <span class="word" id="en-01-11_148_6">sprang</span> <span
+              class="word" id="en-01-11_148_7">up</span> <span class="word" id="en-01-11_148_8">out</span> <span
+              class="word" id="en-01-11_148_9">of</span> <span class="word" id="en-01-11_148_10">nowhere?”</span> <span
+              class="word" id="en-01-11_148_11">Bess</span> <span class="word" id="en-01-11_148_12">asked,</span> <span
+              class="word" id="en-01-11_148_13">giving</span> <span class="word" id="en-01-11_148_14">Nancy</span> <span
+              class="word" id="en-01-11_148_15">an</span> <span class="word" id="en-01-11_148_16">admiring</span> <span
+              class="word" id="en-01-11_148_17">glance.</span> <span class="word" id="en-01-11_148_18">“I’d</span> <span
+              class="word" id="en-01-11_148_19">have</span> <span class="word" id="en-01-11_148_20">fainted</span> <span
+              class="word" id="en-01-11_148_21">on</span> <span class="word" id="en-01-11_148_22">the</span> <span
+              class="word" id="en-01-11_148_23">spot!”</span> </p>
+          <p><span class="word" id="en-01-11_151_1">“That’s</span> <span class="word" id="en-01-11_151_2">an</span>
+            <span class="word" id="en-01-11_151_3">easy</span> <span class="word" id="en-01-11_151_4">way</span> <span
+              class="word" id="en-01-11_151_5">out</span> <span class="word" id="en-01-11_151_6">if</span> <span
+              class="word" id="en-01-11_151_7">I</span> <span class="word" id="en-01-11_151_8">ever</span> <span
+              class="word" id="en-01-11_151_9">heard</span> <span class="word" id="en-01-11_151_10">one!”</span> <span
+              class="word" id="en-01-11_151_11">Nancy</span> <span class="word" id="en-01-11_151_12">commented</span>
+            <span class="word" id="en-01-11_151_13">with</span> <span class="word" id="en-01-11_151_14">a</span> <span
+              class="word" id="en-01-11_151_15">laugh.</span> </p>
+          <p><span class="word" id="en-01-11_154_1">“Girls</span> <span class="word" id="en-01-11_154_2">don’t</span>
+            <span class="word" id="en-01-11_154_3">faint</span> <span class="word" id="en-01-11_154_4">these</span>
+            <span class="word" id="en-01-11_154_5">days,”</span> <span class="word" id="en-01-11_154_6">George</span>
+            <span class="word" id="en-01-11_154_7">scoffed.</span> <span class="word"
+              id="en-01-11_154_8">“Probably</span> <span class="word" id="en-01-11_154_9">you’d</span> <span
+              class="word" id="en-01-11_154_10">have</span> <span class="word" id="en-01-11_154_11">screamed</span>
+            <span class="word" id="en-01-11_154_12">and</span> <span class="word" id="en-01-11_154_13">brought</span>
+            <span class="word" id="en-01-11_154_14">all</span> <span class="word" id="en-01-11_154_15">the</span> <span
+              class="word" id="en-01-11_154_16">members</span> <span class="word" id="en-01-11_154_17">down</span> <span
+              class="word" id="en-01-11_154_18">on</span> <span class="word" id="en-01-11_154_19">you.</span> <span
+              class="word" id="en-01-11_154_20">They’d</span> <span class="word" id="en-01-11_154_21">have</span> <span
+              class="word" id="en-01-11_154_22">dragged</span> <span class="word" id="en-01-11_154_23">you</span> <span
+              class="word" id="en-01-11_154_24">off</span> <span class="word" id="en-01-11_154_25">and</span> <span
+              class="word" id="en-01-11_154_26">put</span> <span class="word" id="en-01-11_154_27">an</span> <span
+              class="word" id="en-01-11_154_28">end</span> <span class="word" id="en-01-11_154_29">to</span> <span
+              class="word" id="en-01-11_154_30">you!”</span> </p>
+          <p><span class="word" id="en-01-11_157_1">“Thanks,</span> <span class="word"
+              id="en-01-11_157_2">George,”</span> <span class="word" id="en-01-11_157_3">Bess</span> <span class="word"
+              id="en-01-11_157_4">muttered.</span> <span class="word" id="en-01-11_157_5">“You</span> <span class="word"
+              id="en-01-11_157_6">say</span> <span class="word" id="en-01-11_157_7">the</span> <span class="word"
+              id="en-01-11_157_8">nicest</span> <span class="word" id="en-01-11_157_9">things!”</span> </p>
+          <p><span class="word" id="en-01-11_160_1">“Well,</span> <span class="word" id="en-01-11_160_2">girls,</span>
+            <span class="word" id="en-01-11_160_3">talk</span> <span class="word" id="en-01-11_160_4">all</span> <span
+              class="word" id="en-01-11_160_5">you</span> <span class="word" id="en-01-11_160_6">like,”</span> <span
+              class="word" id="en-01-11_160_7">Nancy</span> <span class="word" id="en-01-11_160_8">added,</span> <span
+              class="word" id="en-01-11_160_9">“but</span> <span class="word" id="en-01-11_160_10">don’t</span> <span
+              class="word" id="en-01-11_160_11">lose</span> <span class="word" id="en-01-11_160_12">your</span> <span
+              class="word" id="en-01-11_160_13">nerve</span> <span class="word" id="en-01-11_160_14">altogether.</span>
+            <span class="word" id="en-01-11_160_15">I</span> <span class="word" id="en-01-11_160_16">still</span> <span
+              class="word" id="en-01-11_160_17">want</span> <span class="word" id="en-01-11_160_18">to</span> <span
+              class="word" id="en-01-11_160_19">get</span> <span class="word" id="en-01-11_160_20">a</span> <span
+              class="word" id="en-01-11_160_21">closer</span> <span class="word" id="en-01-11_160_22">look</span> <span
+              class="word" id="en-01-11_160_23">at</span> <span class="word" id="en-01-11_160_24">that</span> <span
+              class="word" id="en-01-11_160_25">cave!”</span> </p>
+          <p><span class="word" id="en-01-11_163_1">“Not</span> <span class="word" id="en-01-11_163_2">tonight!”</span>
+            <span class="word" id="en-01-11_163_3">Bess</span> <span class="word" id="en-01-11_163_4">said</span> <span
+              class="word" id="en-01-11_163_5">firmly.</span> </p>
+          <p><span class="word" id="en-01-11_166_1">Nancy</span> <span class="word" id="en-01-11_166_2">smiled.</span>
+            <span class="word" id="en-01-11_166_3">“I</span> <span class="word" id="en-01-11_166_4">hope</span> <span
+              class="word" id="en-01-11_166_5">there</span> <span class="word" id="en-01-11_166_6">won’t</span> <span
+              class="word" id="en-01-11_166_7">be</span> <span class="word" id="en-01-11_166_8">a</span> <span
+              class="word" id="en-01-11_166_9">ritual</span> <span class="word" id="en-01-11_166_10">on</span> <span
+              class="word" id="en-01-11_166_11">the</span> <span class="word" id="en-01-11_166_12">hillside</span> <span
+              class="word" id="en-01-11_166_13">tonight.</span> <span class="word" id="en-01-11_166_14">We’ve</span>
+            <span class="word" id="en-01-11_166_15">been</span> <span class="word" id="en-01-11_166_16">too</span> <span
+              class="word" id="en-01-11_166_17">busy</span> <span class="word" id="en-01-11_166_18">to</span> <span
+              class="word" id="en-01-11_166_19">get</span> <span class="word" id="en-01-11_166_20">our</span> <span
+              class="word" id="en-01-11_166_21">costumes</span> <span class="word" id="en-01-11_166_22">ready.”</span>
+          </p>
+          <p><span class="word" id="en-01-11_169_1">The</span> <span class="word" id="en-01-11_169_2">girls</span> <span
+              class="word" id="en-01-11_169_3">watched</span> <span class="word" id="en-01-11_169_4">but</span> <span
+              class="word" id="en-01-11_169_5">the</span> <span class="word" id="en-01-11_169_6">distant</span> <span
+              class="word" id="en-01-11_169_7">landscape</span> <span class="word" id="en-01-11_169_8">remained</span>
+            <span class="word" id="en-01-11_169_9">dark.</span> <span class="word" id="en-01-11_169_10">Finally</span>
+            <span class="word" id="en-01-11_169_11">they</span> <span class="word" id="en-01-11_169_12">went</span>
+            <span class="word" id="en-01-11_169_13">to</span> <span class="word" id="en-01-11_169_14">bed.</span> <span
+              class="word" id="en-01-11_169_15">Not</span> <span class="word" id="en-01-11_169_16">long</span> <span
+              class="word" id="en-01-11_169_17">afterward,</span> <span class="word" id="en-01-11_169_18">Nancy</span>
+            <span class="word" id="en-01-11_169_19">was</span> <span class="word" id="en-01-11_169_20">roused</span>
+            <span class="word" id="en-01-11_169_21">from</span> <span class="word" id="en-01-11_169_22">a</span> <span
+              class="word" id="en-01-11_169_23">fitful</span> <span class="word" id="en-01-11_169_24">slumber</span>
+            <span class="word" id="en-01-11_169_25">by</span> <span class="word" id="en-01-11_169_26">the</span> <span
+              class="word" id="en-01-11_169_27">stopping</span> <span class="word" id="en-01-11_169_28">of</span> <span
+              class="word" id="en-01-11_169_29">a</span> <span class="word" id="en-01-11_169_30">car</span> <span
+              class="word" id="en-01-11_169_31">not</span> <span class="word" id="en-01-11_169_32">far</span> <span
+              class="word" id="en-01-11_169_33">from</span> <span class="word" id="en-01-11_169_34">her</span> <span
+              class="word" id="en-01-11_169_35">window.</span> <span class="word" id="en-01-11_169_36">She</span> <span
+              class="word" id="en-01-11_169_37">hopped</span> <span class="word" id="en-01-11_169_38">from</span> <span
+              class="word" id="en-01-11_169_39">bed</span> <span class="word" id="en-01-11_169_40">and</span> <span
+              class="word" id="en-01-11_169_41">went</span> <span class="word" id="en-01-11_169_42">to</span> <span
+              class="word" id="en-01-11_169_43">peer</span> <span class="word" id="en-01-11_169_44">out.</span> <span
+              class="word" id="en-01-11_169_45">A</span> <span class="word" id="en-01-11_169_46">tall,</span> <span
+              class="word" id="en-01-11_169_47">slender</span> <span class="word" id="en-01-11_169_48">woman</span>
+            <span class="word" id="en-01-11_169_49">who</span> <span class="word" id="en-01-11_169_50">wore</span> <span
+              class="word" id="en-01-11_169_51">her</span> <span class="word" id="en-01-11_169_52">hair</span> <span
+              class="word" id="en-01-11_169_53">piled</span> <span class="word" id="en-01-11_169_54">high</span> <span
+              class="word" id="en-01-11_169_55">was</span> <span class="word" id="en-01-11_169_56">walking</span> <span
+              class="word" id="en-01-11_169_57">to</span> <span class="word" id="en-01-11_169_58">the</span> <span
+              class="word" id="en-01-11_169_59">front</span> <span class="word" id="en-01-11_169_60">door.</span> </p>
+          <p><span class="word" id="en-01-11_172_1">Nancy</span> <span class="word" id="en-01-11_172_2">leaned</span>
+            <span class="word" id="en-01-11_172_3">out</span> <span class="word" id="en-01-11_172_4">the</span> <span
+              class="word" id="en-01-11_172_5">window</span> <span class="word" id="en-01-11_172_6">and</span> <span
+              class="word" id="en-01-11_172_7">called,</span> <span class="word" id="en-01-11_172_8">“What</span> <span
+              class="word" id="en-01-11_172_9">is</span> <span class="word" id="en-01-11_172_10">it</span> <span
+              class="word" id="en-01-11_172_11">you</span> <span class="word" id="en-01-11_172_12">wish?”</span> </p>
+          <p><span class="word" id="en-01-11_175_1">“Nancy</span> <span class="word" id="en-01-11_175_2">Drew.</span>
+            <span class="word" id="en-01-11_175_3">Is</span> <span class="word" id="en-01-11_175_4">she</span> <span
+              class="word" id="en-01-11_175_5">here?”</span> </p>
+          <p><span class="word" id="en-01-11_178_1">“Yes,</span> <span class="word" id="en-01-11_178_2">I’m</span> <span
+              class="word" id="en-01-11_178_3">Nancy.”</span> </p>
+          <p><span class="word" id="en-01-11_181_1">“I</span> <span class="word" id="en-01-11_181_2">have</span> <span
+              class="word" id="en-01-11_181_3">a</span> <span class="word" id="en-01-11_181_4">letter</span> <span
+              class="word" id="en-01-11_181_5">for</span> <span class="word" id="en-01-11_181_6">you.”</span> <span
+              class="word" id="en-01-11_181_7">Nancy</span> <span class="word" id="en-01-11_181_8">did</span> <span
+              class="word" id="en-01-11_181_9">not</span> <span class="word" id="en-01-11_181_10">recognize</span> <span
+              class="word" id="en-01-11_181_11">the</span> <span class="word" id="en-01-11_181_12">woman’s</span> <span
+              class="word" id="en-01-11_181_13">voice.</span> <span class="word" id="en-01-11_181_14">But</span> <span
+              class="word" id="en-01-11_181_15">she</span> <span class="word" id="en-01-11_181_16">might</span> <span
+              class="word" id="en-01-11_181_17">be</span> <span class="word" id="en-01-11_181_18">disguising</span>
+            <span class="word" id="en-01-11_181_19">it.</span> </p>
+          <p><span class="word" id="en-01-11_184_1">“From</span> <span class="word" id="en-01-11_184_2">whom?”</span>
+          </p>
+          <p><span class="word" id="en-01-11_187_1">“Your</span> <span class="word" id="en-01-11_187_2">father.”</span>
+          </p>
+          <p><span class="word" id="en-01-11_190_1">“Why</span> <span class="word" id="en-01-11_190_2">are</span> <span
+              class="word" id="en-01-11_190_3">you</span> <span class="word" id="en-01-11_190_4">bringing</span> <span
+              class="word" id="en-01-11_190_5">it</span> <span class="word" id="en-01-11_190_6">now?”</span> </p>
+          <p><span class="word" id="en-01-11_193_1">“It’s</span> <span class="word" id="en-01-11_193_2">an</span> <span
+              class="word" id="en-01-11_193_3">urgent</span> <span class="word" id="en-01-11_193_4">message,”</span>
+            <span class="word" id="en-01-11_193_5">the</span> <span class="word" id="en-01-11_193_6">strange</span>
+            <span class="word" id="en-01-11_193_7">woman</span> <span class="word" id="en-01-11_193_8">said.</span>
+            <span class="word" id="en-01-11_193_9">“I’ll</span> <span class="word" id="en-01-11_193_10">leave</span>
+            <span class="word" id="en-01-11_193_11">it</span> <span class="word" id="en-01-11_193_12">on</span> <span
+              class="word" id="en-01-11_193_13">the</span> <span class="word" id="en-01-11_193_14">doorstep.”</span>
+          </p>
+          <p><span class="word" id="en-01-11_196_1">She</span> <span class="word" id="en-01-11_196_2">dropped</span>
+            <span class="word" id="en-01-11_196_3">the</span> <span class="word" id="en-01-11_196_4">letter,</span>
+            <span class="word" id="en-01-11_196_5">hurried</span> <span class="word" id="en-01-11_196_6">into</span>
+            <span class="word" id="en-01-11_196_7">the</span> <span class="word" id="en-01-11_196_8">car,</span> <span
+              class="word" id="en-01-11_196_9">and</span> <span class="word" id="en-01-11_196_10">the</span> <span
+              class="word" id="en-01-11_196_11">man</span> <span class="word" id="en-01-11_196_12">at</span> <span
+              class="word" id="en-01-11_196_13">the</span> <span class="word" id="en-01-11_196_14">wheel</span> <span
+              class="word" id="en-01-11_196_15">drove</span> <span class="word" id="en-01-11_196_16">off.</span> <span
+              class="word" id="en-01-11_196_17">Heart</span> <span class="word" id="en-01-11_196_18">pounding,</span>
+            <span class="word" id="en-01-11_196_19">Nancy</span> <span class="word" id="en-01-11_196_20">put</span>
+            <span class="word" id="en-01-11_196_21">on</span> <span class="word" id="en-01-11_196_22">her</span> <span
+              class="word" id="en-01-11_196_23">robe</span> <span class="word" id="en-01-11_196_24">and</span> <span
+              class="word" id="en-01-11_196_25">slippers</span> <span class="word" id="en-01-11_196_26">and</span> <span
+              class="word" id="en-01-11_196_27">hurried</span> <span class="word" id="en-01-11_196_28">down</span> <span
+              class="word" id="en-01-11_196_29">to</span> <span class="word" id="en-01-11_196_30">the</span> <span
+              class="word" id="en-01-11_196_31">front</span> <span class="word" id="en-01-11_196_32">door.</span> </p>
+        </div>
+      </div>
+
+      <div id="phraseTranslation" class="phrase-translation"></div>
+      <div id="loadingIndicator" class="loading-indicator">Translating...</div>
+    </div>
+  </div>
+
+  <script src="../../js/script.js"></script>
+</body>
+
+</html>

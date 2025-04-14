@@ -1,81 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Story Books Collection</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Fauna+One&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link rel="stylesheet" href="css/index.css" />
-  </head>
-  <body>
-    <div class="quick-controls">
-      <button id="darkModeToggle" title="Toggle Dark Mode">
-        <i class="fas fa-moon" id="darkModeIcon"></i>
-      </button>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Books Collection</title>
 
-    <div class="container py-5 animate-fade-in">
-      <div class="page-header text-center">
-        <h1>Books Collection</h1>
-      </div>
-      <div class="row" id="stories-container">
-        <!-- ========= -->
-        <div class="col-md-4 mb-4">
-          <div
-            class="story-card card h-100"
-            onclick="window.open('book1.html')"
-          >
-            <div class="position-relative">
-              <img
-                src="img/1.jpg"
-                alt="THE SECRET OF RED GATE FARM"
-                class="story-poster"
-              />
-              <span class="language-badge text-white">en</span>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">THE SECRET OF RED GATE FARM</h5>
-            </div>
-          </div>
-        </div>
-        <!-- ========= -->
-        <div class="col-md-4 mb-4">
-          <div
-            class="story-card card h-100"
-            onclick="window.open('book2.html')"
-          >
-            <div class="position-relative">
-              <img
-                src="img/2.jpg"
-                alt="La petite fille de Monsieur Linh"
-                class="story-poster"
-              />
-              <span class="language-badge text-white">fr</span>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">La petite fille de Monsieur Linh</h5>
-            </div>
-          </div>
-        </div>
-        <!-- ========= -->
-      </div>
-    </div>
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/book.css">
+</head>
+<body class="dark-mode">
+  <div class="content-books">
+    <h1 class="books-header">My Books Collection</h1>
+    <div class="books-grid">
 
-    <script src="js/index.js"></script>
-  </body>
+      <!-- Book 1 -->
+      <a href="books/en-01/en-01-01.html" class="book-card">
+        <img src="img/1.jpg" alt="Book 1 Cover" class="book-poster" />
+        <div class="book-info">
+          <h3 class="book-title">The Great Adventure</h3>
+          <span class="language-badge">English</span>
+        </div>
+      </a>
+
+      <!-- Placeholder Book 2 -->
+    </div>
+  </div>
+</body>
 </html>

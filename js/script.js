@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Get the language prefix from the page name (e.g., "en" from "en-01-01.html")
+  const pageName = window.location.pathname.split('/').pop().split('.')[0];
+  const languagePrefix = pageName.split('-')[0];
+  const savedWordKey = `savedWordId_${pageName}`;
+
   // DOM elements
   const words = document.querySelectorAll(".word");
   const goToSavedBtn = document.getElementById("goToSavedBtn");
@@ -8,13 +13,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // State variables
   let longPressTimer;
-  let savedWordIdFr = localStorage.getItem("savedWordIdFr");
+  let savedWordId = localStorage.getItem(savedWordKey);
   let currentHighlight = null;
   let lastSelectionTime = 0;
 
   // Check if there's a saved word and highlight it
-  if (savedWordIdFr) {
-    const savedWord = document.getElementById(savedWordIdFr);
+  if (savedWordId) {
+    const savedWord = document.getElementById(savedWordId);
     if (savedWord) {
       savedWord.classList.add("saved-word");
       goToSavedBtn.style.display = "flex";
@@ -26,15 +31,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Set up event listeners
   setupEventListeners();
 
-  // Initialize progress bar
-  window.addEventListener("scroll", updateProgressBar);
-  updateProgressBar();
-
   function setupEventListeners() {
     // Go to saved word button click handler
     goToSavedBtn.addEventListener("click", function () {
-      if (savedWordIdFr) {
-        const savedWord = document.getElementById(savedWordIdFr);
+      if (savedWordId) {
+        const savedWord = document.getElementById(savedWordId);
         if (savedWord) {
           savedWord.scrollIntoView({ behavior: "smooth", block: "center" });
           savedWord.style.backgroundColor = "var(--secondary-accent)";
@@ -114,21 +115,21 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleLongPress(word) {
     let newWordId = word.id;
 
-    if (savedWordIdFr) {
-      let [savedBookId] = savedWordIdFr.split("_");
+    if (savedWordId) {
+      let [savedBookId] = savedWordId.split("_");
       let [newBookId] = newWordId.split("_");
 
       if (savedBookId === newBookId) {
         // Update saved word for the same book
-        const prevSavedWord = document.getElementById(savedWordIdFr);
+        const prevSavedWord = document.getElementById(savedWordId);
         if (prevSavedWord) prevSavedWord.classList.remove("saved-word");
       }
     }
 
     // Save new word
-    savedWordIdFr = newWordId;
+    savedWordId = newWordId;
     word.classList.add("saved-word");
-    localStorage.setItem("savedWordIdFr", savedWordIdFr);
+    localStorage.setItem(savedWordKey, savedWordId);
     goToSavedBtn.style.display = "flex";
 
     // Show feedback
@@ -164,6 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Try multiple translation services as fallback
     tryTranslate(
       text,
+      languagePrefix, // Pass the source language
       (translation) => {
         word.classList.add("translated");
         word.setAttribute("data-translation", translation);
@@ -192,6 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     tryTranslate(
       text,
+      languagePrefix, // Pass the source language
       (translation) => {
         loadingIndicator.style.display = "none";
         phraseTranslation.textContent = translation;
@@ -214,12 +217,12 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 
-  function tryTranslate(text, successCallback, errorCallback) {
+  function tryTranslate(text, sourceLang, successCallback, errorCallback) {
     // First try MyMemory API
     fetch(
       `https://api.mymemory.translated.net/get?q=${encodeURIComponent(
         text
-      )}&langpair=en|ar`
+      )}&langpair=${sourceLang}|ar`
     )
       .then((response) => {
         if (!response.ok) throw new Error("Network response was not ok");
@@ -242,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
           },
           body: JSON.stringify({
             q: text,
-            source: "en",
+            source: sourceLang,
             target: "ar",
           }),
         })
@@ -300,15 +303,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const fullHeight = document.body.clientHeight;
     const scrolled = window.scrollY;
     const progress = (scrolled / (fullHeight - windowHeight)) * 100;
-    progressBar.style.width = progress + "%";
+    progressBar.style.width = `${progress}%`;
   }
+
+  // Initialize progress bar and set up scroll listener
+  updateProgressBar();
+  window.addEventListener("scroll", updateProgressBar);
 });
 
+// Home button functionality
 document.getElementById("homeButton").addEventListener("click", function () {
   window.location.href = "/";
 });
 
-// timer
+// Timer functionality
 let timer;
 let timeElapsed = 0;
 let running = false;
@@ -343,3 +351,20 @@ function toggleTimer() {
 
 document.getElementById("timerButton").addEventListener("click", toggleTimer);
 updateDisplay();
+
+// Mobile menu toggle
+document.getElementById('mobileMenuToggle').addEventListener('click', function () {
+  document.querySelector('.nav-sidebar').classList.toggle('visible');
+});
+
+// Theme toggle functionality
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', function () {
+  document.body.classList.toggle('dark-mode');
+  const icon = this.querySelector('i');
+  if (document.body.classList.contains('dark-mode')) {
+    icon.classList.replace('fa-moon', 'fa-sun');
+  } else {
+    icon.classList.replace('fa-sun', 'fa-moon');
+  }
+});
