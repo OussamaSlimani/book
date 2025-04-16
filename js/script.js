@@ -1,3 +1,55 @@
+function checkLastSavedChapter() {
+  // Get the page name (e.g., "fr-01_01.html")
+  const pageName = window.location.pathname.split('/').pop().split('.')[0];
+  
+  // Extract the book prefix (e.g., "fr-01" from "fr-01_01")
+  const bookPrefix = pageName.split('_')[0];
+  
+  // Get all keys from localStorage that start with "savedWordId_" + bookPrefix
+  const savedChapters = [];
+  
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key.startsWith(`savedWordId_${bookPrefix}_`)) {
+      // Extract chapter number from key (e.g., "01" from "savedWordId_fr-01_01")
+      const chapterNum = key.split('_')[2].split('.')[0];
+      savedChapters.push(parseInt(chapterNum));
+    }
+  }
+  
+  // If we found any saved chapters
+  if (savedChapters.length > 0) {
+    // Sort the chapters numerically
+    savedChapters.sort((a, b) => a - b);
+    
+    // Get the highest chapter number
+    const lastChapter = savedChapters[savedChapters.length - 1];
+    
+    // Show notification
+    const notification = document.createElement('div');
+    notification.style.position = 'fixed';
+    notification.style.top = '20px';
+    notification.style.left = '50%';
+    notification.style.transform = 'translateX(-50%)';
+    notification.style.backgroundColor = 'var(--primary-accent)';
+    notification.style.color = 'white';
+    notification.style.padding = '5px';
+    notification.style.borderRadius = '5px';
+    notification.style.zIndex = '1000';
+    notification.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+    notification.style.animation = 'fadeIn 0.3s, fadeOut 0.3s 3s forwards';
+    notification.textContent = `Last chapter: ${lastChapter.toString().padStart(2, '0')}`;
+
+    
+    document.body.appendChild(notification);
+    
+    // Remove after animation completes
+    setTimeout(() => {
+      notification.remove();
+    }, 2000);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   // Get the language prefix from the page name (e.g., "en" from "en-01-01.html")
   const pageName = window.location.pathname.split('/').pop().split('.')[0];
@@ -306,9 +358,9 @@ document.addEventListener("DOMContentLoaded", function () {
     progressBar.style.width = `${progress}%`;
   }
 
-  // Initialize progress bar and set up scroll listener
-  updateProgressBar();
-  window.addEventListener("scroll", updateProgressBar);
+  // checkLastSavedChapter
+  checkLastSavedChapter()
+  
 });
 
 // Home button functionality

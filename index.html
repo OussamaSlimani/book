@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Books Collection</title>
-
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Open+Sans&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/book.css">
 </head>
-
 <body class="dark-mode">
   <div class="content-books">
-    <h1 class="books-header">My Books Collection</h1>
+    <h1 class="books-header">My Books</h1>
     <div class="books-grid">
-
-      <!-- Book  -->
-      <a href="books/en-01/en-01-01.html" class="book-card">
-        <img src="img/en-01.jpg" alt="Book 1 Cover" class="book-poster" />
+      <!-- Book -->
+      <a href="books/en-01/en-01_01.html" class="book-card">
+        <div class="img-container">
+          <img src="img/en-01.jpg" alt="Book 1" class="book-poster">
+          <span class="language-badge">EN</span>
+        </div>
         <div class="book-info">
           <p class="book-title">The Great Adventure</p>
-          <span class="language-badge">English</span>
         </div>
       </a>
-      <!-- Book  -->
+      <!-- Book -->
       <a href="books/fr-01/fr-01_01.html" class="book-card">
-        <img src="img/fr-01.jpg" alt="Book 1 Cover" class="book-poster" />
+        <div class="img-container">
+          <img src="img/fr-01.jpg" alt="Book 2" class="book-poster">
+          <span class="language-badge">FR</span>
+        </div>
         <div class="book-info">
-          <p class="book-title">Les misérables Tome I: Fantine - Livre premier: Un juste</p>
-          <span class="language-badge">French</span>
+          <p class="book-title">Les misérables Tome I</p>
         </div>
       </a>
-      <!-- Placeholder Book 2 -->
+       <!-- Book -->
+      <a href="books/en-02/en-02_01.html" class="book-card">
+        <div class="img-container">
+          <img src="img/en-02.png" alt="Book 3" class="book-poster">
+          <span class="language-badge">EN</span>
+        </div>
+        <div class="book-info">
+          <p class="book-title">Harry Potter I</p>
+        </div>
+      </a>
+       <!-- Book -->
     </div>
   </div>
 </body>
-
 </html>

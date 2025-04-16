@@ -422,17 +422,6 @@
     text-align: center;
     margin-bottom: 3rem;
     font-size: 3rem;
-    position: relative;
-  }
-  
-  .books-header::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: var(--primary-accent);
-    margin: 1rem auto 0;
-    border-radius: 4px;
   }
   
   .books-grid {
@@ -444,23 +433,21 @@
   
   .book-card {
     background: var(--card-bg);
-    border: 1px solid var(--card-border);
     border-radius: 20px;
     overflow: hidden;
-    backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 280px;
     text-decoration: none;
     color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    width: 280px;
   }
   
   .book-card:hover {
     transform: scale(1.03);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+  }
+  
+  .img-container {
+    position: relative;
   }
   
   .book-poster {
@@ -470,12 +457,20 @@
     border-bottom: 1px solid var(--card-border);
   }
   
+  .language-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--primary-accent);
+    color: white;
+    border-radius: 4px;
+    font-size: 0.7rem;
+  }
+  
   .book-info {
     padding: 1rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    text-align: center;
   }
   
   .book-title {
@@ -483,54 +478,16 @@
     font-size: 1rem;
     margin: 0.5rem 0;
     color: var(--card-title-color);
-    text-align: center;
-  }
-  
-  .language-badge {
-    display: inline-block;
-    align-self: center;
-    padding: 0.35rem 0.7rem;
-    background-color: var(--primary-accent);
-    color: white;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    letter-spacing: 0.5px;
   }
   
   @media (max-width: 768px) {
-    .book-card {
-      width: 230px;
-    }
-  
-    .book-poster {
-      height: 250px;
-    }
-  
-    .books-header {
-      font-size: 2.5rem;
-    }
-  
-    .book-title {
-      font-size: 1.3rem;
-    }
+    .book-card { width: 230px; }
+    .book-poster { height: 250px; }
+    .books-header { font-size: 2.5rem; }
   }
   
   @media (max-width: 576px) {
-    .book-card {
-      width: 100%;
-      max-width: 90%;
-    }
-  
-    .book-poster {
-      height: 200px;
-    }
-  
-    .books-header {
-      font-size: 2.2rem;
-    }
-  
-    .book-title {
-      font-size: 1.2rem;
-    }
+    .book-card { width: 100%; max-width: 90%; }
+    .book-poster { height: 200px; }
+    .books-header { font-size: 2.2rem; }
   }
-  

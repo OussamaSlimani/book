@@ -80,20 +80,22 @@ EOF
 
       <div class="book-container" id="bookContainer" style="display: block;">
         <h1 id="bookTitle">$title</h1>
-        <h2>Chapter $chapter_num</h2>
         <div id="bookContent">
 EOF
 
     # Output chapter content with paragraphs
     echo "$content" | awk -v id="$id" -v ch="$chapter_num" '
-    BEGIN { RS=""; ORS="\n\n" }
+    BEGIN { RS=""; ORS="\n\n"; para_num = 0 }
     {
-        gsub(/\n+/, " ");
-        printf "          <p>"
+        para_num++
+        gsub(/\n+/, " ")
         split($0, words, " ")
+        printf "          <p>"
+        word_num = 0
         for (i = 1; i <= length(words); i++) {
             if (words[i] != "") {
-                printf "<span class=\"word\" id=\"%s_%d_%d\">%s</span> ", id, ch, i, words[i]
+                word_num++
+                printf "<span class=\"word\" id=\"%s_%d_%d_%d\">%s</span> ", id, ch, para_num, word_num, words[i]
             }
         }
         print "</p>\n"
