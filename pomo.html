@@ -282,7 +282,9 @@
                     
                     // Vibrate if supported (500ms vibration)
                     if ('vibrate' in navigator) {
-                        navigator.vibrate(500);
+                    navigator.vibrate([500, 200, 500, 200, 500]); 
+                    } else {
+                        console.log('Vibration not supported');
                     }
                 } catch (e) {
                     console.log('Notification failed:', e);
