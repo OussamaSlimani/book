@@ -240,6 +240,10 @@
             let sessionCount = 1;
             let totalWorkTime = 0;
 
+            // Notification sound 
+            const notificationSound = new Audio('notification.mp3'); 
+            notificationSound.volume = 0.8;
+
             function updateDisplay() {
                 const minutes = Math.floor(timeLeft / 60);
                 const seconds = timeLeft % 60;
@@ -259,6 +263,7 @@
                     sessionInfo.textContent = `Work Session ${sessionCount}`;
                     document.body.classList.remove('break');
                     document.body.classList.add('work');
+                    statsDisplay.textContent = '';
                 } else {
                     sessionInfo.textContent = 'Break Time';
                     document.body.classList.remove('work');
@@ -270,7 +275,22 @@
                 }
             }
 
+            function playNotification() {
+                try {
+                    notificationSound.play().catch(e => console.log('Audio play failed:', e));
+                    
+                    // Vibrate if supported (500ms vibration)
+                    if ('vibrate' in navigator) {
+                        navigator.vibrate(500);
+                    }
+                } catch (e) {
+                    console.log('Notification failed:', e);
+                }
+            }
+
             function switchSession() {
+                playNotification();
+                
                 if (isWorkSession) {
                     isWorkSession = false;
                     timeLeft = breakDuration;
@@ -282,35 +302,42 @@
                 }
 
                 updateDisplay();
-                playNotificationSound();
+                
+                // Auto-start the next session if timer was running
+                if (isRunning) {
+                    startTimer();
+                }
             }
 
-            function playNotificationSound() {
-                const audio = new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU...');
-                audio.volume = 0.3;
-                audio.play().catch(e => console.log('Audio play failed:', e));
+            function startTimer() {
+                playNotification();
+                clearInterval(timerInterval);
+                isRunning = true;
+                startPauseBtn.textContent = 'Pause';
+
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    updateDisplay();
+
+                    if (timeLeft <= 0) {
+                        clearInterval(timerInterval);
+                        isRunning = false;
+                        switchSession();
+                    }
+                }, 1000);
+            }
+
+            function stopTimer() {
+                clearInterval(timerInterval);
+                isRunning = false;
+                startPauseBtn.textContent = 'Start';
             }
 
             function toggleTimer() {
                 if (isRunning) {
-                    clearInterval(timerInterval);
-                    isRunning = false;
-                    startPauseBtn.textContent = 'Start';
+                    stopTimer();
                 } else {
-                    isRunning = true;
-                    startPauseBtn.textContent = 'Pause';
-
-                    timerInterval = setInterval(() => {
-                        timeLeft--;
-                        updateDisplay();
-
-                        if (timeLeft <= 0) {
-                            clearInterval(timerInterval);
-                            isRunning = false;
-                            switchSession();
-                            startPauseBtn.textContent = 'Start';
-                        }
-                    }, 1000);
+                    startTimer();
                 }
             }
 
