@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -105,7 +108,6 @@
             background: rgba(0, 208, 132, 0.6);
         }
 
-
         .break button {
             background-color: var(--secondary);
             box-shadow: 0 0 12px rgba(255, 107, 107, 0.4);
@@ -121,6 +123,26 @@
             color: rgba(255, 255, 255, 0.55);
             text-align: center;
         }
+
+        #fullscreenBtn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--gray);
+            color: var(--light);
+            border: none;
+            padding: 10px 14px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: background 0.3s ease;
+        }
+
+        #fullscreenBtn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
 
         @media (max-width: 600px) {
             .container {
@@ -141,6 +163,7 @@
 </head>
 
 <body>
+    <button id="fullscreenBtn" title="Toggle Fullscreen">⛶</button>
     <div class="container">
         <div class="session-info" id="sessionInfo">Work Session 1</div>
         <div class="timer-display" id="timer">
@@ -161,17 +184,16 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // DOM elements
             const timerDisplay = document.getElementById('timer');
             const startPauseBtn = document.getElementById('startPauseBtn');
             const sessionInfo = document.getElementById('sessionInfo');
             const progressBar = document.getElementById('progressBar');
             const statsDisplay = document.getElementById('stats');
             const timerDigits = document.querySelectorAll('.timer-digit');
+            const fullscreenBtn = document.getElementById('fullscreenBtn');
 
-            // Timer variables
-            let workDuration = 25 * 60; // 25 minutes in seconds
-            let breakDuration = 5 * 60; // 5 minutes in seconds
+            let workDuration = 25 * 60;
+            let breakDuration = 5 * 60;
             let timeLeft = workDuration;
             let timerInterval = null;
             let isRunning = false;
@@ -179,13 +201,10 @@
             let sessionCount = 1;
             let totalWorkTime = 0;
 
-            // Update the timer display
             function updateDisplay() {
                 const minutes = Math.floor(timeLeft / 60);
                 const seconds = timeLeft % 60;
                 const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-                // Update each digit individually
                 const digits = timeString.replace(':', '').split('');
                 timerDigits.forEach((digit, index) => {
                     if (index < digits.length) {
@@ -193,12 +212,10 @@
                     }
                 });
 
-                // Update progress bar
                 const totalTime = isWorkSession ? workDuration : breakDuration;
                 const progress = ((totalTime - timeLeft) / totalTime) * 100;
                 progressBar.style.width = `${progress}%`;
 
-                // Update session info
                 if (isWorkSession) {
                     sessionInfo.textContent = `Work Session ${sessionCount}`;
                     document.body.classList.remove('break');
@@ -208,22 +225,18 @@
                     document.body.classList.remove('work');
                     document.body.classList.add('break');
 
-                    // Calculate total work time in hours and minutes
                     const hours = Math.floor(totalWorkTime / 3600);
                     const mins = Math.floor((totalWorkTime % 3600) / 60);
                     statsDisplay.textContent = `Total work time: ${hours > 0 ? hours + 'h ' : ''}${mins}m`;
                 }
             }
 
-            // Switch between work and break sessions
             function switchSession() {
                 if (isWorkSession) {
-                    // Work session ended, start break
                     isWorkSession = false;
                     timeLeft = breakDuration;
                     totalWorkTime += workDuration;
                 } else {
-                    // Break ended, start new work session
                     isWorkSession = true;
                     timeLeft = workDuration;
                     sessionCount++;
@@ -233,22 +246,18 @@
                 playNotificationSound();
             }
 
-            // Play notification sound
             function playNotificationSound() {
-                const audio = new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU...'); // Short base64 encoded beep
+                const audio = new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU...');
                 audio.volume = 0.3;
                 audio.play().catch(e => console.log('Audio play failed:', e));
             }
 
-            // Start or pause the timer
             function toggleTimer() {
                 if (isRunning) {
-                    // Pause the timer
                     clearInterval(timerInterval);
                     isRunning = false;
                     startPauseBtn.textContent = 'Start';
                 } else {
-                    // Start the timer
                     isRunning = true;
                     startPauseBtn.textContent = 'Pause';
 
@@ -266,20 +275,26 @@
                 }
             }
 
-            // Reset the timer
-            function resetTimer() {
-                clearInterval(timerInterval);
-                isRunning = false;
-                isWorkSession = true;
-                timeLeft = workDuration;
-                startPauseBtn.textContent = 'Start';
-                updateDisplay();
-            }
-
-            // Event listeners
             startPauseBtn.addEventListener('click', toggleTimer);
 
-            // Initialize display
+            // Fullscreen Toggle
+            fullscreenBtn.addEventListener('click', () => {
+                const elem = document.documentElement;
+                if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+                    if (elem.requestFullscreen) {
+                        elem.requestFullscreen();
+                    } else if (elem.webkitRequestFullscreen) {
+                        elem.webkitRequestFullscreen();
+                    }
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    }
+                }
+            });
+
             updateDisplay();
         });
     </script>
