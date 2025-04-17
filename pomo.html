@@ -276,7 +276,7 @@
                 }
             }
 
-            function playNotification() {
+            function playNotificationWithVibration() {
                 try {
                     notificationSound.play().catch(e => console.log('Audio play failed:', e));
                     
@@ -291,7 +291,19 @@
                 }
             }
 
+            function playNotification() {
+                try {
+                    notificationSound.play().catch(e => console.log('Audio play failed:', e));
+                } catch (e) {
+                    console.log('Notification failed:', e);
+                }
+            }
+
+            
+
             function switchSession() {
+                playNotificationWithVibration();
+                
                 if (isWorkSession) {
                     isWorkSession = false;
                     timeLeft = breakDuration;
